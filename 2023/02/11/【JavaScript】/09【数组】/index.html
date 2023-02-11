@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>【数组】 |  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-【JavaScript】/09【数组】"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  【数组】
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/09%E3%80%90%E6%95%B0%E7%BB%84%E3%80%91/" class="article-date">
+  <time datetime="2023-02-11T10:09:00.000Z" itemprop="datePublished">2023-02-11</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">19 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="【数组】"><a href="#【数组】" class="headerlink" title="【数组】"></a>【数组】</h1><h2 id="什么是数组"><a href="#什么是数组" class="headerlink" title="什么是数组"></a>什么是数组</h2><p>数组（Array），顾名思义：用来存储一组相关值的类型</p>
+<p>数组可以方便地对一组值进行求和、计算平均值、逐项遍历等操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> scoreArr = [<span class="number">87</span>, <span class="number">89</span>, <span class="number">93</span>, <span class="number">71</span>, <span class="number">100</span>, <span class="number">68</span>, <span class="number">94</span>, <span class="number">88</span>];</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>数组名习惯以 Arr 结尾</p>
+</blockquote>
+<h2 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h2><h3 id="方括号定义法"><a href="#方括号定义法" class="headerlink" title="方括号定义法"></a>方括号定义法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+<h3 id="new-定义法"><a href="#new-定义法" class="headerlink" title="new 定义法"></a>new 定义法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// 定义一个长度为 4 的数组，但是这 4 项都是 undefined</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>两种定义方法根据实际需求选择即可，两者的底层都是同样的实现逻辑</p>
+<p>推荐：方括号定义法！</p>
+<ul>
+<li>如果是定义时就要指定数组的值，那么建议使用：<code>let arr = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;];</code></li>
+<li>如果是定义时还不指定数组的值，那么建议使用：<code>let arr = [];</code></li>
+</ul>
+</blockquote>
+<h2 id="访问数组项"><a href="#访问数组项" class="headerlink" title="访问数组项"></a>访问数组项</h2><blockquote>
+<p>注意：JS 中数组的元素可以是不同的数据类型！</p>
+</blockquote>
+<p>数组每一项都有下标，下标从 0 开始！</p>
+<p>可以使用 <code>数组名[下标]</code> 的形式，访问数组的任一项</p>
+<h2 id="下标越界"><a href="#下标越界" class="headerlink" title="下标越界"></a>下标越界</h2><p>JS 规定，访问数组中不存在的项会返回 <code>undefined</code>，不会报错！</p>
+<h2 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h2><p>数组的 <code>length</code> 属性表示它的长度</p>
+<blockquote>
+<p>数组是引用类型，有自己的属性和方法</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="property">length</span>); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>数组最后一项的下标是数组的长度减 1</p>
+</blockquote>
+<h2 id="更改数组项"><a href="#更改数组项" class="headerlink" title="更改数组项"></a>更改数组项</h2><ol>
+<li>访问数组项</li>
+<li>更改数组值</li>
+</ol>
+<p>如果更改的数组项超过了 <code>length-1</code>，则会创造该项</p>
+<blockquote>
+<p>JS 数组是可以动态扩容的！这就 NB 了！</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">arr[<span class="number">6</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [1, 2, 3, 4, undefined, undefined, 0]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><p>数组最大的优点就是方便遍历</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> a) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);  <span class="comment">// &#x27;0&#x27;, &#x27;1&#x27;, &#x27;2&#x27;</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a[i]);  <span class="comment">// &#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组类型的检测"><a href="#数组类型的检测" class="headerlink" title="数组类型的检测"></a>数组类型的检测</h2><p>数组用 <code>typeof</code> 检测结果是 <code>object</code></p>
+<p><code>Array.isArray()</code> 方法可以用来检测数组，返回一个布尔值</p>
+<blockquote>
+<p>isArray() 不兼容 IE678，所以后面课程中，还将介绍使用 “鸭式辨型” 检测方法</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Array</span>.<span class="title function_">isArray</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);  <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="title function_">isArray</span>([]);    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h2><h3 id="数组的头尾操作"><a href="#数组的头尾操作" class="headerlink" title="数组的头尾操作"></a>数组的头尾操作</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>push()</code></td>
+<td>在尾部插入新项</td>
+</tr>
+<tr>
+<td><code>pop()</code></td>
+<td>在尾部删除</td>
+</tr>
+<tr>
+<td><code>unshift()</code></td>
+<td>在头部插入新项</td>
+</tr>
+<tr>
+<td><code>shift()</code></td>
+<td>在头部删除</td>
+</tr>
+</tbody></table>
+<h4 id="push-方法"><a href="#push-方法" class="headerlink" title="push() 方法"></a>push() 方法</h4><p><code>push()</code> 方法用来在数组末尾推入新项，参数就是要推入的项</p>
+<p>如果要推入多项，可以用逗号隔开</p>
+<p>调用 <code>push()</code> 方法后，数组会立即改变，不需要赋值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>];</span><br><span class="line">arr.<span class="title function_">push</span>(<span class="number">66</span>);</span><br><span class="line">arr.<span class="title function_">push</span>(<span class="number">77</span>, <span class="number">88</span>, <span class="number">99</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"><span class="comment">// [22, 33, 44, 55, 66, 77, 88, 99]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="pop-方法"><a href="#pop-方法" class="headerlink" title="pop() 方法"></a>pop() 方法</h4><p>与 push() 方法相反，<code>pop()</code> 方法用来删除数组中的最后一项</p>
+<p><code>()</code> 里没有参数，默认弹出最后一项</p>
+<p><code>pop()</code> 默认返回最后一项的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>];</span><br><span class="line"><span class="keyword">let</span> item =  arr.<span class="title function_">pop</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [22, 33, 44]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(item); <span class="comment">// 55</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="unshift-方法"><a href="#unshift-方法" class="headerlink" title="unshift() 方法"></a>unshift() 方法</h4><p><code>unshift()</code> 方法用来在数组头部插入新项，参数就是要插入的项</p>
+<p>如果要插入多项，可以用逗号隔开</p>
+<p>调用 <code>unshift()</code> 方法后，数组会立即改变，不需要赋值</p>
+<h4 id="shift-方法"><a href="#shift-方法" class="headerlink" title="shift() 方法"></a>shift() 方法</h4><p>与 unshift() 方法相反，<code>shift()</code> 方法用来删除数组中的开头一项</p>
+<p><code>()</code> 里没有参数，默认弹出开头一项</p>
+<p><code>shift()</code> 默认返回开头一项的值</p>
+<h3 id="splice-方法"><a href="#splice-方法" class="headerlink" title="splice() 方法"></a>splice() 方法</h3><p><code>splice()</code> 方法用于替换数组中的指定项</p>
+<blockquote>
+<p>由于 splice() 可以实现很多功能，所以也称为 JS 的 “多功能方法”</p>
+</blockquote>
+<ul>
+<li>替换项</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>];</span><br><span class="line"><span class="comment">// 从下标为 3 的项开始，连续替换 2 项。即将 &#x27;D&#x27;, &#x27;E&#x27; 替换为 &#x27;X&#x27;, &#x27;Y&#x27;, &#x27;Z&#x27;</span></span><br><span class="line">arr.<span class="title function_">splice</span>(<span class="number">3</span>, <span class="number">2</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"><span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;X&#x27;, &#x27;Y&#x27;, &#x27;Z&#x27;, &#x27;F&#x27;, &#x27;G&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>插入项</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>];</span><br><span class="line"><span class="comment">// 从下标为 2 的项开始，连续替换 0 项，即：在 [2] 处插入。</span></span><br><span class="line">arr.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">0</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"><span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;X&#x27;, &#x27;Y&#x27;, &#x27;Z&#x27;, &#x27;C&#x27;, &#x27;D&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除项</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>];</span><br><span class="line"><span class="comment">// 从下标为 2 的项开始，连续替换 4 项（替换为空，即：删除）。</span></span><br><span class="line">arr.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"><span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;G&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>splice()</code> 方法会以数组形式返回被替换&#x2F;删除的项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>];</span><br><span class="line"><span class="comment">// 从下标为 3 的项开始，连续替换 2 项。</span></span><br><span class="line"><span class="keyword">let</span> item = arr.<span class="title function_">splice</span>(<span class="number">3</span>, <span class="number">2</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"><span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;X&#x27;, &#x27;Y&#x27;, &#x27;Z&#x27;, &#x27;F&#x27;, &#x27;G&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(item);</span><br><span class="line"><span class="comment">// [&#x27;D&#x27;, &#x27;E&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>];</span><br><span class="line"><span class="comment">// 从下标为 2 的项开始，连续替换 4 项（替换为空，即：删除）。</span></span><br><span class="line"><span class="keyword">let</span> item = arr.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"><span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;G&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(item);</span><br><span class="line"><span class="comment">// [&#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice() 方法"></a>slice() 方法</h3><p><code>slice()</code> 方法用于得到子数组，类似于字符串中的 slice() 方法</p>
+<p><code>slice(a, b)</code> 截取的子数组从下标为 a 的项开始，到下标为 b（但不包括下标为 b 的项）结束</p>
+<p><code>slice(a, b)</code> 方法不会更改原有的数组</p>
+<p><code>slice()</code> 如果不提供第二个参数，则表示从指定项开始，提取后续所有项作为子数组</p>
+<p><code>slice()</code> 方法的参数允许为负数，表示数组的倒数第几项（记住不包括最后一项）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> childArr1 = arr.<span class="title function_">slice</span>(<span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line"><span class="keyword">let</span> childArr2 = arr.<span class="title function_">slice</span>(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">let</span> childArr3 = arr.<span class="title function_">slice</span>(<span class="number">2</span>, -<span class="number">1</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);   <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(childArr1);  <span class="comment">// [&#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(childArr2);  <span class="comment">// [&#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(childArr3);  <span class="comment">// [&#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="join-和-split-方法"><a href="#join-和-split-方法" class="headerlink" title="join() 和 split() 方法"></a>join() 和 split() 方法</h3><p>数组的 <code>join()</code> 方法可以使 数组 转为 字符串</p>
+<p>字符串的 <code>split()</code> 方法可以使 字符串 转为 数组</p>
+<ul>
+<li><code>join()</code> 的参数表示以什么字符作为连接符，如果留空则默认以逗号分隔，如同调用 <code>toString()</code> 方法</li>
+<li><code>split()</code> 的参数表示以什么字符拆分字符串，一般不能留空</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>].<span class="title function_">join</span>();  <span class="comment">// &quot;22,33,44,55&quot;</span></span><br><span class="line">[<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>].<span class="title function_">toString</span>(); <span class="comment">// &quot;22,33,44,55&quot;</span></span><br><span class="line">[<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>].<span class="title function_">join</span>(<span class="string">&#x27;,&#x27;</span>);  <span class="comment">// &quot;22,33,44,55&quot;</span></span><br><span class="line">[<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>].<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>);  <span class="comment">// &quot;22-33-44-55&quot;</span></span><br><span class="line">[<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>, <span class="number">55</span>].<span class="title function_">join</span>(<span class="string">&#x27;~&#x27;</span>);  <span class="comment">// &quot;22~33~44~55&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;abcdefg&#x27;</span>.<span class="title function_">split</span>();    <span class="comment">// [&quot;abcdefg&quot;]</span></span><br><span class="line"><span class="string">&#x27;abcdefg&#x27;</span>.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>);   <span class="comment">// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;]</span></span><br><span class="line"><span class="string">&#x27;a-b-c-d-e-f-g&#x27;</span>.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>);  <span class="comment">// [&quot;a&quot;, &quot;-&quot;, &quot;b&quot;, &quot;-&quot;, &quot;c&quot;, &quot;-&quot;, &quot;d&quot;, &quot;-&quot;, &quot;e&quot;, &quot;-&quot;, &quot;f&quot;, &quot;-&quot;, &quot;g&quot;]</span></span><br><span class="line"><span class="string">&#x27;a-b-c-d-e-f-g&#x27;</span>.<span class="title function_">split</span>(<span class="string">&#x27;-&#x27;</span>);  <span class="comment">// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串和数组更多相关性"><a href="#字符串和数组更多相关性" class="headerlink" title="字符串和数组更多相关性"></a>字符串和数组更多相关性</h3><p>字符串也可以使用 <code>[下标]</code> 的形式访问某个字符，等价于 <code>charAt()</code> 方法</p>
+<blockquote>
+<p>在对字符串中的字符进行遍历时不用转为数组，直接利用 [下标] 即可</p>
+<p>字符串的一些算法问题，会转为数组解决！</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;我爱前端&#x27;</span>[<span class="number">0</span>];   <span class="comment">// &quot;我&quot;</span></span><br><span class="line"><span class="string">&#x27;我爱前端&#x27;</span>[<span class="number">1</span>];   <span class="comment">// &quot;爱&quot;</span></span><br><span class="line"><span class="string">&#x27;我爱前端&#x27;</span>.<span class="title function_">charAt</span>(<span class="number">0</span>); <span class="comment">// &quot;我&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;我爱前端&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="concat-方法"><a href="#concat-方法" class="headerlink" title="concat() 方法"></a>concat() 方法</h3><p><code>concat()</code> 方法可以合并连接多个数组（以返回值的形式）</p>
+<p><code>concat()</code> 方法不会改变原数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>];</span><br><span class="line"><span class="keyword">let</span> arr = arr1.<span class="title function_">concat</span>(arr2, arr3);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="reverse-方法"><a href="#reverse-方法" class="headerlink" title="reverse() 方法"></a>reverse() 方法</h3><p><code>reverse()</code> 方法用来将一个数组中的全部项顺序置反</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>];</span><br><span class="line">arr.<span class="title function_">reverse</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr); <span class="comment">// [&quot;D&quot;, &quot;C&quot;, &quot;B&quot;, &quot;A&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>【一个小案例】</p>
+<p>字符串 <code>&#39;ABCDEFG&#39;</code> 逆序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;ABCDEFG&#x27;</span>.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>().<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"><span class="comment">// &quot;GFEDCBA&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="indexOf-和-includes-方法"><a href="#indexOf-和-includes-方法" class="headerlink" title="indexOf() 和 includes() 方法"></a>indexOf() 和 includes() 方法</h3><p><code>indexOf()</code> 方法的功能是搜索数组中的元素，并返回它所在的位置，如果元素不存在，则返回 -1</p>
+<p><code>includes()</code> 方法的功能是判断一个数组是否包含一个指定的值，返回一个布尔值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>].<span class="title function_">indexOf</span>(<span class="string">&#x27;C&#x27;</span>); <span class="comment">// 2</span></span><br><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>].<span class="title function_">indexOf</span>(<span class="string">&#x27;D&#x27;</span>); <span class="comment">// 3</span></span><br><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>].<span class="title function_">indexOf</span>(<span class="string">&#x27;X&#x27;</span>); <span class="comment">// -1</span></span><br><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;B&#x27;</span>].<span class="title function_">indexOf</span>(<span class="string">&#x27;B&#x27;</span>); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>].<span class="title function_">includes</span>(<span class="string">&#x27;D&#x27;</span>); <span class="comment">// true</span></span><br><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>].<span class="title function_">includes</span>(<span class="string">&#x27;X&#x27;</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：<code>indexOf()</code> 及 <code>includes()</code> 方法的判断标准为 <code>===</code> 全相等！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>].<span class="title function_">includes</span>(<span class="string">&#x27;22&#x27;</span>); <span class="comment">// false</span></span><br><span class="line">[<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>].<span class="title function_">indexOf</span>(<span class="string">&#x27;22&#x27;</span>);  <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sort-方法"><a href="#sort-方法" class="headerlink" title="sort() 方法"></a>sort() 方法</h3><p>数组有 <code>sort()</code> 方法可以用于数组的排序，但是涉及到函数的相关知识，在函数一节课进行介绍</p>
+<p>除了内置排序方法外，还有一些排序算法：<code>冒泡排序</code> 和 <code>快速排序</code> 将在后面介绍</p>
+<h3 id="有关数组在-ES6-中的增强"><a href="#有关数组在-ES6-中的增强" class="headerlink" title="有关数组在 ES6 中的增强"></a>有关数组在 ES6 中的增强</h3><p>数组在 ES6 中新增了较多的新方法，将在 ES6 相关课程中介绍</p>
+<h3 id="数组去重和随机样本"><a href="#数组去重和随机样本" class="headerlink" title="数组去重和随机样本"></a>数组去重和随机样本</h3><p>【数组去重】</p>
+<p>题目：去掉数组中的重复项</p>
+<p>思路：准备一个空结果数组，遍历原数组，如果遍历到的项不在结果数组中，则推入结果数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> resultArr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!resultArr.<span class="title function_">includes</span>(arr[i])) &#123;</span><br><span class="line">        resultArr.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(resultArr);</span><br></pre></td></tr></table></figure>
+
+<p>【随机样本】</p>
+<p>题目：请随机从原数组中取 3 项</p>
+<p>思路：准备一个空结果数组，遍历原数组，随机选择一项，推入结果数组，并且将这项在原数组中删除</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">3</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> resultArr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> n = <span class="built_in">parseInt</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * arr.<span class="property">length</span>);</span><br><span class="line">    resultArr.<span class="title function_">push</span>(arr[n]);</span><br><span class="line">    arr.<span class="title function_">splice</span>(n, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(resultArr);</span><br></pre></td></tr></table></figure>
+
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序是一个著名的排序算法，也是最基础的交换排序</p>
+<p>冒泡排序的核心思想：一趟一趟地进行多次项的两两比较，每次都会将最大的元素排好位置，如同水中的气泡上浮一样</p>
+<blockquote>
+<p>时间复杂度：O(n²)</p>
+</blockquote>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/5c4ac9feb8ce4e3289acb75376e667b8.gif" alt="5c4ac9feb8ce4e3289acb75376e667b8"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">9</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> temp;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span> - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; arr.<span class="property">length</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &gt; arr[j]) &#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            arr[i] = arr[j];</span><br><span class="line">            arr[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br></pre></td></tr></table></figure>
+
+<h3 id="快速排序（冒泡排序改进版）"><a href="#快速排序（冒泡排序改进版）" class="headerlink" title="快速排序（冒泡排序改进版）"></a>快速排序（冒泡排序改进版）</h3><p>快速排序（Quicksort）是使用得最广泛，速度也较快的排序算法。它是图灵奖得主 C. A. R. Hoare（1934–）于 1960 时提出来的。是二十世纪10大算法之一，非常重要！时间复杂度： <code>O(nlogn)</code>，稳定性：<code>不稳定</code></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Sorting_quicksort_anim.gif" alt="Sorting_quicksort_anim"></p>
+<p>快速排序与冒泡排序同属交换排序，不过快速排序采用了 “分治法” 的思想大大提高了排序的时间性能</p>
+<p>“快速排序”的思想很简单，整个排序过程只需要三步：</p>
+<ol>
+<li><p>在数据集之中，选择一个元素作为 “基准”（pivot）</p>
+</li>
+<li><p>所有小于 “基准” 的元素，都移到 “基准” 的左边；所有大于 “基准” 的元素，都移到 “基准” 的右边</p>
+</li>
+<li><p>对 基准 左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止</p>
+</li>
+</ol>
+<p>举例来说，现在有一个数据集 <code>&#123;85, 24, 63, 45, 17, 31, 96, 50&#125;</code>，怎么对其排序呢？</p>
+<p>第一步，选择中间的元素 45 作为 “基准”（基准值可以任意选择，但是选择中间的值比较容易理解）</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/bg2011040403.png" alt="bg2011040403"></p>
+<p>第二步，按照顺序，将每个元素与 “基准” 进行比较，形成两个子集，一个 “小于45”，另一个 “大于等于45”</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/bg2011040404.png" alt="bg2011040404"></p>
+<p>第三步，对两个子集不断重复第一步和第二步，直到所有子集只剩下一个元素为止</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/bg2011040405.png" alt="bg2011040405"></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/bg2011040406.png" alt="bg2011040406"></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/bg2011040407.png" alt="bg2011040407"></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/bg2011040408.png" alt="bg2011040408"></p>
+<p>下面用 Javascript 语言实现上面的算法</p>
+<p>首先，定义一个 quickSort 函数，它的参数是一个数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quickSort = <span class="keyword">function</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>然后，检查数组的元素个数，如果小于等于 1，就返回</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quickSort = <span class="keyword">function</span>(<span class="params">arr</span>) &#123;</span><br><span class="line"> <span class="keyword">if</span> (arr.<span class="property">length</span> &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr; </span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>接着，选择 “基准”（pivot），并将其与原数组分离，再定义两个空数组，用来存放一左一右的两个子集</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quickSort = <span class="keyword">function</span>(<span class="params">arr</span>) &#123;</span><br><span class="line"> <span class="keyword">if</span> (arr.<span class="property">length</span> &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Math.floor 向下取整</span></span><br><span class="line"> 　　<span class="keyword">let</span> pivotIndex = <span class="title class_">Math</span>.<span class="title function_">floor</span>(arr.<span class="property">length</span> / <span class="number">2</span>) ;</span><br><span class="line"> <span class="comment">// splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。</span></span><br><span class="line"> 　　<span class="keyword">let</span> pivot = arr.<span class="title function_">splice</span>(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line"> 　　<span class="keyword">let</span> left = [];</span><br><span class="line"> 　　<span class="keyword">let</span> right = [];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>然后，开始遍历数组，小于 “基准” 的元素放入左边的子集，大于基准的元素放入右边的子集</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quickSort = <span class="keyword">function</span>(<span class="params">arr</span>) &#123;</span><br><span class="line"> <span class="keyword">if</span> (arr.<span class="property">length</span> &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> arr; </span><br><span class="line">   &#125;</span><br><span class="line">　　<span class="keyword">let</span> pivotIndex = <span class="title class_">Math</span>.<span class="title function_">floor</span>(arr.<span class="property">length</span> / <span class="number">2</span>) ;</span><br><span class="line">　　<span class="keyword">let</span> pivot = arr.<span class="title function_">splice</span>(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">　　<span class="keyword">let</span> left = [];</span><br><span class="line">　　<span class="keyword">let</span> right = [];</span><br><span class="line">　　<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">          left.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          right.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>最后，使用递归不断重复这个过程，就可以得到排序后的数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> quickSort = <span class="keyword">function</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr.<span class="property">length</span> &lt;= <span class="number">1</span>) &#123; </span><br><span class="line">        <span class="keyword">return</span> arr; </span><br><span class="line">    &#125;</span><br><span class="line">　　<span class="keyword">let</span> pivotIndex = <span class="title class_">Math</span>.<span class="title function_">floor</span>(arr.<span class="property">length</span> / <span class="number">2</span>);</span><br><span class="line">　　<span class="keyword">let</span> pivot = arr.<span class="title function_">splice</span>(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">　　<span class="keyword">let</span> left = [];</span><br><span class="line">　　<span class="keyword">let</span> right = [];</span><br><span class="line">　　<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">          left.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          right.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="comment">// concat 拼接数组</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">quickSort</span>(left).<span class="title function_">concat</span>([pivot], <span class="title function_">quickSort</span>(right));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><p>二维数组：以数组作为数组元素的数组，即 “数组的数组”</p>
+<p>二维数组可以看做是 “矩阵”</p>
+<blockquote>
+<p>matrix：矩阵</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> matrix = [</span><br><span class="line">    [<span class="number">11</span>, <span class="number">33</span>, <span class="number">55</span>],</span><br><span class="line">    [<span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>],</span><br><span class="line">    [<span class="number">36</span>, <span class="number">49</span>, <span class="number">52</span>],</span><br><span class="line">    [<span class="number">56</span>, <span class="number">10</span>, <span class="number">23</span>]</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 二维数组长度</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(matrix.<span class="property">length</span>);  <span class="comment">// 4</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(matrix[<span class="number">1</span>].<span class="property">length</span>); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历二维数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; matrix.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; matrix[i].<span class="property">length</span>; j++) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(matrix[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本类型值和引用类型值"><a href="#基本类型值和引用类型值" class="headerlink" title="基本类型值和引用类型值"></a>基本类型值和引用类型值</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>当 let a &#x3D; b 变量传值时</th>
+<th>当用 &#x3D;&#x3D; 或 &#x3D;&#x3D;&#x3D; 比较时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本类型值</td>
+<td>内存中产生新的副本</td>
+<td>比较值是否相等（由于是赋值所以类型肯定相同，&#x3D;&#x3D;&#x3D; 无需考虑类型是否相等）</td>
+</tr>
+<tr>
+<td>引用类型值</td>
+<td>内存中不产生新的副本，而是让新变量指向同一个对象</td>
+<td>比较内存地址是否相等，即：比较是否是同一个对象（由于是赋值所以类型肯定相同，&#x3D;&#x3D;&#x3D; 无需考虑类型是否相等）</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本类型值</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">let</span> b = a;</span><br><span class="line">a++;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);  <span class="comment">// 4</span></span><br><span class="line">consloe.<span class="title function_">log</span>(b);  <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引用类型值</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1;</span><br><span class="line">arr1.<span class="title function_">push</span>(<span class="number">5</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr1); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr2); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>基本类型：<code>number</code>、<code>boolean</code>、<code>string</code>、<code>undefined</code>、<code>null</code></li>
+<li>引用类型：<code>array</code>、<code>object</code>、<code>function</code>、<code>regexp</code>、……</li>
+</ul>
+<p>【内存】</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/78d2f78a614042ef998a91c992154d7e.png" alt="78d2f78a614042ef998a91c992154d7e"></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/9dfcfceed30440c290efc2ec3226919b.png" alt="9dfcfceed30440c290efc2ec3226919b"></p>
+<p>【相等 <code>==</code> 判断时的区别】</p>
+<ul>
+<li>基本类型进行相等 <code>==</code> 判断时，会比较 “值” 是否相等</li>
+<li>引用类型进行相等 <code>==</code> 判断时，会比较 “址” 是否相等，也就是说它会比较是否为内存中的同一个东西</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> == <span class="number">3</span>;  <span class="comment">// true</span></span><br><span class="line"><span class="number">3</span> === <span class="number">3</span>;  <span class="comment">// true</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] == [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// false</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] === [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// false</span></span><br><span class="line">[] == []; <span class="comment">// false</span></span><br><span class="line">[] === []; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr == arr;  <span class="comment">// true</span></span><br><span class="line"><span class="keyword">let</span> arr2 = arr;</span><br><span class="line">arr == arr2; <span class="comment">// true，这里比较的是 arr 与 arr2 中保存的地址是否相等</span></span><br><span class="line">arr === arr2; <span class="comment">// true，由于类型相同，所以这里比较的也是 arr 与 arr2 中保存的地址是否相等</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="深克隆和浅克隆"><a href="#深克隆和浅克隆" class="headerlink" title="深克隆和浅克隆"></a>深克隆和浅克隆</h2><blockquote>
+<p>深克隆和浅克隆需要手写代码实现，而不是简单的调用函数</p>
+</blockquote>
+<p>使用 arr1 &#x3D; arr2 的语法不会克隆数组</p>
+<p>浅克隆：只克隆数组的第一层，如果是多维数组，或者数组中的项是其他引用类型值，则不克隆其他层</p>
+<p>深克隆：克隆数组的所有层，要用递归技术，在后面课程中介绍</p>
+<p>【浅克隆】</p>
+<blockquote>
+<p>核心思想：“藕断丝连”</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]];</span><br><span class="line"><span class="keyword">let</span> resultArr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    resultArr.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(resultArr);              <span class="comment">// [1, 2, 3, 4, [5, 6, 7]]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(resultArr == arr);    <span class="comment">// false    </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(resultArr[<span class="number">4</span>] == arr[<span class="number">4</span>]); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/02/11/%E3%80%90JavaScript%E3%80%91/09%E3%80%90%E6%95%B0%E7%BB%84%E3%80%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/10%E3%80%90%E5%87%BD%E6%95%B0%E3%80%91/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【函数】
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/08%E3%80%90%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E3%80%91/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【流程控制】</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> Nail-clipper
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/logo.png" alt=""></a>
+    </div>
+    
+      <ul class="nav nav-main">
+        
+          <li class="nav-item">
+            <a class="nav-item-link" href="/">
+              主页
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/archives">
+              归档
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/categories">
+              分类
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/tags">
+              标签
+            </a>
+          </li>
+          
+      </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+        <a class="nav-item-link nav-item-search" title="搜索">
+          <i class="ri-search-line"></i>
+        </a>
+        
+          
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+
+
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>【Module模块】 |  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-【JavaScript】/24【Module模块】"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  【Module模块】
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/24%E3%80%90Module%E6%A8%A1%E5%9D%97%E3%80%91/" class="article-date">
+  <time datetime="2023-02-11T10:24:00.000Z" itemprop="datePublished">2023-02-11</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">8 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="【Module模块】"><a href="#【Module模块】" class="headerlink" title="【Module模块】"></a>【Module模块】</h1><h2 id="初识Module"><a href="#初识Module" class="headerlink" title="初识Module"></a>初识Module</h2><p>（1）什么是模块</p>
+<p>模块：一个一个的局部作用域的代码块</p>
+<p>（2）什么是模块系统</p>
+<p>模块系统：系统的解决了模块化一系列问题</p>
+<ol>
+<li>模块化的写法（之前我们用立即执行函数模拟模块化，ES6 则实现了针对模块化的语法）</li>
+<li>消除全局变量（模块中的变量都是局部的，不同模块之间不会相互干扰，可以通过特定语法暴露指定内容）</li>
+<li>管理加载顺序（之前我们将一个总的 JavaScript 程序分几个文件写，但在最终合并调用时，js 的引入需要满足前后依赖关系。比如：被引用的 js 文件就一定要在引用它的 js 文件之前加载）</li>
+</ol>
+<h2 id="Module的基本用法"><a href="#Module的基本用法" class="headerlink" title="Module的基本用法"></a>Module的基本用法</h2><blockquote>
+<p>注意：Module 要生效，必须在服务器环境下才能执行</p>
+<p>普通的 HTML、JS 是本地文件环境，地址以 file 协议开头，服务器则以 http 或 https 开头</p>
+<p>方法：VSCode 中使用 Live Server 拓展，WebStorm 默认就是服务器环境</p>
+</blockquote>
+<ul>
+<li>一个 JS 文件就是一个模块</li>
+<li>用 import 关键字导入模块</li>
+<li>用 export 关键字导出模块需要暴露的部分</li>
+<li>在使用 script 标签加载的时候，需要加上 type&#x3D;”module”，否则就以普通 JS 文件的形式引入了，就不是模块了</li>
+</ul>
+<h2 id="Module的导入导出"><a href="#Module的导入导出" class="headerlink" title="Module的导入导出"></a>Module的导入导出</h2><blockquote>
+<p>导出的东西可以被导入（import），并访问到！</p>
+<p>对于导入和导出有两种方法：</p>
+<ul>
+<li>export default 导出，import 导入</li>
+<li>export 导出，import 导入</li>
+</ul>
+</blockquote>
+<h3 id="export-default-导出和对应的-import-导入"><a href="#export-default-导出和对应的-import-导入" class="headerlink" title="export default 导出和对应的 import 导入"></a>export default 导出和对应的 import 导入</h3><p>（1）一个模块没有导出，是否可以将其导入？</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 一个模块没有导出，也可以将其导入 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 被导入的模块的代码都会执行一遍，并且同一个模块的导入只执行一遍！ --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Module<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- script 标签需要加上 type=&quot;module&quot; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> <span class="string">&quot;./test.js&quot;</span>;		<span class="comment">// 浏览器控制台打印：test</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> <span class="string">&quot;./test.js&quot;</span>;		<span class="comment">// 不执行</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> <span class="string">&quot;./test.js&quot;</span>;		<span class="comment">// 不执行</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> <span class="string">&quot;./test02.js&quot;</span>;	<span class="comment">// 浏览器控制台打印：test02</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> <span class="string">&quot;./test.js&quot;</span>;		<span class="comment">// 不执行</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> <span class="string">&quot;./test02.js&quot;</span>;	<span class="comment">// 不执行</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">----------------------------------------------------</span><br><span class="line"><span class="comment">&lt;!-- test.js --&gt;</span></span><br><span class="line"></span><br><span class="line">console.log(&quot;test&quot;);</span><br><span class="line"></span><br><span class="line">----------------------------------------------------</span><br><span class="line"><span class="comment">&lt;!-- test02.js --&gt;</span></span><br><span class="line"></span><br><span class="line">console.log(&quot;test02&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>（2）一个模块中只能有一个 export default。</p>
+<p>【module.js】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模块中的变量都是局部的</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">const</span> sex = <span class="string">&quot;male&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> age;			<span class="comment">// 通过 export default 导出（暴露）一个值</span></span><br><span class="line"><span class="comment">// export default sex;		// 报错！因为 export default 只能在一个文件中导出一次！！！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">export default 24;				// 可以导出值</span></span><br><span class="line"><span class="comment">export default &#123;&#125;;				// 可以导出对象</span></span><br><span class="line"><span class="comment">export default function()&#123;&#125;;	 // 可以导出函数</span></span><br><span class="line"><span class="comment">export default class&#123;&#125;;			 // 可以导出class</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>【index.html】</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Module<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- script 标签需要加上 type=&quot;module&quot; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// import 之后跟一个模块的别名，推荐别名与导出时的名字相同，比如这里就用 age</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> age <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(age);	<span class="comment">// 18</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="export-导出和对应的-import-导入"><a href="#export-导出和对应的-import-导入" class="headerlink" title="export 导出和对应的 import 导入"></a>export 导出和对应的 import 导入</h3><p><strong>（1）基本用法</strong></p>
+<p>【module.js】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">const age = 18;</span></span><br><span class="line"><span class="comment">export age;		// 报错</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// export 后面只能跟声明或语句！</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> age = <span class="number">18</span>;</span><br></pre></td></tr></table></figure>
+
+<p>【index.html】</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Module<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- script 标签需要加上 type=&quot;module&quot; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// import aaa from &quot;./module.js&quot;;	// 报错！ </span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// export 导出的模块，在导入时不能随意取别名，名称必须与模块导出时相同！并且要使用类似于解构赋值的&#123;&#125;形式！</span></span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> &#123;age&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;	<span class="comment">// 注意：名称不能随意取，一定要与模块相同</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(age);	<span class="comment">// 18;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：在用 export 导出时，也可以用类似于解构赋值的<code>&#123;&#125;</code>形式！</p>
+<p>【module.js】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;age&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）多个导出导入</strong></p>
+<p>【module.js】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、采用声明或语句的形式</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">export funciton fn() &#123;&#125;;</span></span><br><span class="line"><span class="comment">export class className &#123;&#125;;</span></span><br><span class="line"><span class="comment">export const age = 18;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、采用解构赋值的形式</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">className</span> &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 方式 1：</span></span><br><span class="line"><span class="comment">export &#123;fn&#125;;</span></span><br><span class="line"><span class="comment">export &#123;className&#125;;</span></span><br><span class="line"><span class="comment">export &#123;age&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式 2：</span></span><br><span class="line"><span class="keyword">export</span> &#123;fn, className, age&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>【index.html】</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Module<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- script 标签需要加上 type=&quot;module&quot; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/* 方式 1：</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">    import &#123;fn&#125; from &quot;./module.js&quot;;</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">    import &#123;className&#125; from &quot;./module.js&quot;;</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">    import &#123;age&#125; from &quot;./module.js&quot;;</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">    */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 方式 2：</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> &#123;fn, className, age&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(fn);			<span class="comment">// ƒ fn() &#123;&#125;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(className);		<span class="comment">// class className &#123;&#125;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(age);	    	<span class="comment">// 18</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>（3）导出导入时起别名</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123;fn <span class="keyword">as</span> func, className <span class="keyword">as</span> cN, age&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;func, cN, age <span class="keyword">as</span> nl&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(func);			<span class="comment">// ƒ fn() &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cN);			<span class="comment">// class className &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nl);	    	<span class="comment">// 18</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>（4）整体导入</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 之前的导入方式，如果导入的模块不多那么还好，但是一但模块数量多了起来，那么就特别费劲</span></span><br><span class="line"><span class="comment">// import &#123;fn, className, age&#125; from &quot;./module.js&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 整体导入</span></span><br><span class="line"><span class="comment">// 将同一文件里的所有模块导入到一个对象中</span></span><br><span class="line"><span class="comment">// 不仅对 export 有效，同时对 export default 也同样有效</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> imObj <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(imObj);					<span class="comment">// 见图片</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(imObj.<span class="property">fn</span>);				<span class="comment">// ƒ fn() &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(imObj.<span class="property">className</span>);		<span class="comment">// class className &#123;&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(imObj.<span class="property">age</span>);				<span class="comment">// 18</span></span><br><span class="line"><span class="comment">// export default 也同样有效：imObj.default</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20220602154710981.png" alt="image-20220602154710981" style="zoom:50%;" />
+
+<p><strong>（5）同时导入</strong></p>
+<p>当我们需要分别导入 export default 和 export 时，可以使用同时导入的方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们可以分开实现</span></span><br><span class="line"><span class="keyword">import</span> &#123;fn, className, age&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> sex <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更推荐使用同时导入的方式</span></span><br><span class="line"><span class="keyword">import</span> sex, &#123;fn, className, age&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"><span class="comment">// 注意：export default 必须在 export 之前</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Module的注意事项"><a href="#Module的注意事项" class="headerlink" title="Module的注意事项"></a>Module的注意事项</h2><h3 id="Module的注意事项-1"><a href="#Module的注意事项-1" class="headerlink" title="Module的注意事项"></a>Module的注意事项</h3><p><strong>（1）模块顶层的 this 指向</strong></p>
+<p>顶层：不在 if、for、while、函数等局部作用域之外的部分</p>
+<p>在模块中顶层的 this 指向 undefined！（千万不要误以为指向 window）</p>
+<blockquote>
+<p>模块中顶层的 this 指向 undefined，所以我们可以利用这个特性，检测模块有没有被正确的导入。比如：当 script 标签中没有 type&#x3D;”moudel” 时，模块就没有被成功引入，那么 this 就指向的是 window</p>
+</blockquote>
+<blockquote>
+<p>当我们需要指定必须以模块的方式导入时，我们可以这样做：</p>
+<p>【module.js】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span> !== <span class="string">&quot;undefined&quot;</span>) &#123;</span><br><span class="line"> <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;请使用模块的方式加载！&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>（2）import 关键字和 import() 函数</strong></p>
+<ul>
+<li><p>import 命令具有提升效果，无论写在哪都会提升到代码的头部，率先执行！</p>
+</li>
+<li><p>import 执行的时候，代码还没有执行，所以我们不能将 import 嵌入到代码逻辑中！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下做法时错误的！</span></span><br><span class="line"><span class="keyword">if</span> (...) &#123;</span><br><span class="line">    <span class="keyword">import</span> <span class="string">&quot;./pc.js&quot;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">import</span> <span class="string">&quot;./mobile.js&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// import 和 export 命令只能在模块的顶层，不能在代码块中执行！ </span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>import() 可以按条件导入，并且返回一个 promise 对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (...) &#123;</span><br><span class="line">    <span class="keyword">import</span>(<span class="string">&quot;pc.js&quot;</span>).<span class="title function_">then</span>().<span class="title function_">catch</span>();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">import</span>(<span class="string">&quot;mobile.js&quot;</span>).<span class="title function_">then</span>().<span class="title function_">catch</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>（3）导入导出的复合写法</strong></p>
+<p>复合写法：在一条语句中同时完成导入和导出</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入导出的复合写法</span></span><br><span class="line"><span class="keyword">export</span> &#123;age&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">import</span> &#123;age&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;age&#125; <span class="keyword">from</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"><span class="comment">// 先导入用，用完后再导出，相当于 “中转站”</span></span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/02/11/%E3%80%90JavaScript%E3%80%91/24%E3%80%90Module%E6%A8%A1%E5%9D%97%E3%80%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6+</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/25%E3%80%90Babel%E4%B8%8Ewebpack%E3%80%91/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【Babel与webpack】
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/23%E3%80%90Class%E7%B1%BB%E3%80%91/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【Class类】</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> Nail-clipper
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/logo.png" alt=""></a>
+    </div>
+    
+      <ul class="nav nav-main">
+        
+          <li class="nav-item">
+            <a class="nav-item-link" href="/">
+              主页
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/archives">
+              归档
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/categories">
+              分类
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/tags">
+              标签
+            </a>
+          </li>
+          
+      </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+        <a class="nav-item-link nav-item-search" title="搜索">
+          <i class="ri-search-line"></i>
+        </a>
+        
+          
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+
+
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

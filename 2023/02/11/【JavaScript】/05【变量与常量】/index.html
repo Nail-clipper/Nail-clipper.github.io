@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>【变量与常量】 |  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-【JavaScript】/05【变量与常量】"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  【变量与常量】
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/05%E3%80%90%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F%E3%80%91/" class="article-date">
+  <time datetime="2023-02-11T10:05:00.000Z" itemprop="datePublished">2023-02-11</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">4 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="【变量与常量】"><a href="#【变量与常量】" class="headerlink" title="【变量与常量】"></a>【变量与常量】</h1><p>变量是计算机中用来存储数据的“容器”，它可以让计算机变得有记忆<br>通俗的理解变量就是使用【某个符号】来代表【某个具体的数值】（数据）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// x 符号代表了 5 这个数值</span></span><br><span class="line">x = <span class="number">5</span></span><br><span class="line"><span class="comment">// y 符号代表了 6 这个数值</span></span><br><span class="line">y = <span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//举例： 在 JavaScript 中使用变量可以将某个数据（数值）记录下来！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将用户输入的内容保存在 num 这个变量（容器）中</span></span><br><span class="line">num = <span class="title function_">prompt</span>(<span class="string">&#x27;请输入一数字!&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过 num 变量（容器）将用户输入的内容输出出来</span></span><br><span class="line"><span class="title function_">alert</span>(num)</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(num)</span><br></pre></td></tr></table></figure>
+
+<h2 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h2><p>声明(定义)变量有两部分构成：声明关键字、变量名（标识）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// let 变量名</span></span><br><span class="line"><span class="comment">// 声明(定义)变量有两部分构成：声明关键字、变量名（标识）</span></span><br><span class="line"><span class="comment">// let 即关键字，所谓关键字是系统提供的专门用来声明（定义）变量的词语</span></span><br><span class="line"><span class="comment">// age 即变量的名称，也叫标识符</span></span><br><span class="line"><span class="keyword">let</span> age</span><br></pre></td></tr></table></figure>
+
+<p>关键字是 JavaScript 中内置的一些英文词汇（单词或缩写），它们代表某些特定的含义，如 <code>let</code> 的含义是声明变量的，看到 <code>let</code>  后就可想到这行代码的意思是在声明变量，如 <code>let age;</code></p>
+<blockquote>
+<p><code>let</code> 和 <code>var</code> 都是 JavaScript 中的声明变量的关键字，推荐使用 <code>let</code> 声明变量！！！</p>
+</blockquote>
+<h2 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h2><p>声明（定义）变量相当于创造了一个空的“容器”，通过赋值向这个容器中添加数据。</p>
+<blockquote>
+<p>在声明变量的时候直接完成赋值操作，这种操作称为初始化</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明(定义)变量有两部分构成：声明关键字、变量名（标识）</span></span><br><span class="line"><span class="comment">// let 即关键字，所谓关键字是系统提供的专门用来声明（定义）变量的词语</span></span><br><span class="line"><span class="comment">// age 即变量的名称，也叫标识符</span></span><br><span class="line"><span class="keyword">let</span> age</span><br><span class="line"><span class="comment">// 赋值，将 18 这个数据存入了 age 这个“容器”中</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="comment">// 这样 age 的值就成了 18</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(age)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以声明和赋值同时进行</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;hello world!&#x27;</span></span><br><span class="line"><span class="title function_">alert</span>(str);</span><br></pre></td></tr></table></figure>
+
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>JavaScript 使用专门的关键字 <code>let</code> 和 <code>var</code> 来声明（定义）变量，在使用时需要注意一些细节：</p>
+<p>以下是使用 <code>let</code> 时的注意事项：</p>
+<ol>
+<li>允许声明和赋值同时进行</li>
+<li>不允许重复声明</li>
+<li>允许同时声明多个变量并赋值</li>
+<li>JavaScript 中内置的一些关键字不能被当做变量名</li>
+</ol>
+<blockquote>
+<p>同时声明多个变量中间用逗号隔开，如：<code>let age = 18, uname = &#39;pink&#39;</code>但不建议这么写，可读性不好</p>
+</blockquote>
+<p>以下是使用 <code>var</code> 时的注意事项：</p>
+<ol>
+<li>允许声明和赋值同时进行</li>
+<li>允许重复声明</li>
+<li>允许同时声明多个变量并赋值</li>
+</ol>
+<blockquote>
+<p><code>var</code>已经是旧时代的产物了，以后不要用<code>var</code>了</p>
+</blockquote>
+<h2 id="变量的本质"><a href="#变量的本质" class="headerlink" title="变量的本质"></a>变量的本质</h2><p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-10_00-19-57.png" alt="Snipaste_2023-02-10_00-19-57"></p>
+<h2 id="变量名命名规则"><a href="#变量名命名规则" class="headerlink" title="变量名命名规则"></a>变量名命名规则</h2><blockquote>
+<p>规则：必须遵守，不遵守会报错</p>
+</blockquote>
+<ol>
+<li>只能是字母、数字、下划线、$，且不能能数字开头</li>
+<li>字母区分大小写，如 Age 和 age 是不同的变量</li>
+<li>JavaScript 内部已占用于单词（关键字或保留字）不允许使用</li>
+</ol>
+<blockquote>
+<p>注：所谓关键字是指 JavaScript 内部使用的词语，如 <code>let</code> 和<code>var</code>，保留字是指 JavaScript 内部目前没有使用的词语，但是将来可能会使用词语。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">18</span> <span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">let</span> age1 = <span class="number">18</span> <span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">let</span> _age = <span class="number">18</span> <span class="comment">// 正确</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// let 1age = 18; // 错误，不可以数字开头</span></span><br><span class="line"><span class="keyword">let</span> $age = <span class="number">18</span> <span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">let</span> <span class="title class_">Age</span> = <span class="number">24</span> <span class="comment">// 正确，它与小写的 age 是不同的变量</span></span><br><span class="line"><span class="comment">// let let = 18; // 错误，let 是关键字</span></span><br><span class="line"><span class="keyword">let</span> int = <span class="number">123</span> <span class="comment">// 不推荐，int 是保留字</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="变量名命名规范"><a href="#变量名命名规范" class="headerlink" title="变量名命名规范"></a>变量名命名规范</h2><blockquote>
+<p>规范：建议，不遵守不会报错，但不符合业内通识</p>
+</blockquote>
+<ol>
+<li>起名要有意义</li>
+<li>遵守小驼峰命名法：第一个单词首字母小写，后面每个单词首字母大写。如：userName</li>
+</ol>
+<h2 id="strict严格模式"><a href="#strict严格模式" class="headerlink" title="strict严格模式"></a>strict严格模式</h2><p>在 strict 模式下运行的 JavaScript 代码，强制通过 <code>let</code>、<code>var</code> 申明变量，未使用 <code>let</code>、<code>var</code> 申明变量就使用的，将导致运行错误。</p>
+<p>启用 strict 模式的方法是在 JavaScript 代码的第一行写上：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个字符串，不支持 strict 模式的浏览器会把它当做一个字符串语句执行，支持 strict 模式的浏览器将开启 strict 模式运行 JavaScript。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line">abc = <span class="string">&quot;Hello, world&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(abc);</span><br><span class="line"><span class="comment">// 如果浏览器支持 strict 模式，</span></span><br><span class="line"><span class="comment">// 下面的代码将报 ReferenceError 错误：Uncaught ReferenceError: abc is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>不用 <code>let</code>、<code>var</code> 申明的变量会被视为全局变量，为了避免这一缺陷，所有的 JavaScript 代码都推荐使用 strict 模式。</p>
+<p>提示：<code>&quot;use strict&quot;</code>语句可以放在 JS 代码的任意一行上，并且它只对它所在作用域下方的代码起作用。</p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>概念：使用 const 声明的变量称为“常量”。</p>
+<p>使用场景：当某个变量永远不会改变的时候，就可以使用 const 来声明，而不是let。</p>
+<p>命名规范：和变量一致</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">PI</span> = <span class="number">3.14</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意： 常量不允许重新赋值,声明的时候必须赋值（初始化）</p>
+</blockquote>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/02/11/%E3%80%90JavaScript%E3%80%91/05%E3%80%90%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F%E3%80%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/06%E3%80%90%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%91/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【数据类型】
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2023/02/11/%E3%80%90JavaScript%E3%80%91/04%E3%80%90%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA%E3%80%91/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【输入和输出】</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2023
+        <i class="ri-heart-fill heart_icon"></i> Nail-clipper
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/logo.png" alt=""></a>
+    </div>
+    
+      <ul class="nav nav-main">
+        
+          <li class="nav-item">
+            <a class="nav-item-link" href="/">
+              主页
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/archives">
+              归档
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/categories">
+              分类
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-item-link" href="/tags">
+              标签
+            </a>
+          </li>
+          
+      </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+        <a class="nav-item-link nav-item-search" title="搜索">
+          <i class="ri-search-line"></i>
+        </a>
+        
+          
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+
+
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
