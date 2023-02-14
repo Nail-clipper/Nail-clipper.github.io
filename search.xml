@@ -24,4 +24,40 @@
         <tag>桌面图标白板</tag>
       </tags>
   </entry>
+  <entry>
+    <title>【Hexo发生error：spawn failed错误的解决方法】</title>
+    <url>/2023/02/10/Hexo%E5%8F%91%E7%94%9Ferror%EF%BC%9Aspawn%20failed%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>将项目部署到远端时，报错401</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-18-27.png" alt="Snipaste_2023-02-14_10-18-27"></p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><h3 id="首先检查公钥是否出现了问题"><a href="#首先检查公钥是否出现了问题" class="headerlink" title="首先检查公钥是否出现了问题"></a>首先检查公钥是否出现了问题</h3><p>1、打开<code>git Bash here</code> </p>
+<p>2、生成密钥<code>ssh-keygen -t rsa -C &quot;邮箱&quot;</code>，三次<code>Enter</code></p>
+<p>2、<code>&quot;C:\Users\用户名\\.ssh\id_rsa.pub&quot;</code>打开此路径的公钥文件，重新添加公钥</p>
+<p>右上角：</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-25-06.png" alt="Snipaste_2023-02-14_10-25-06"></p>
+<p>左边栏：</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-25-29.png" alt="Snipaste_2023-02-14_10-25-29"></p>
+<p>版心栏：</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-25-56.png" alt="Snipaste_2023-02-14_10-25-56"></p>
+<h3 id="使用SSH地址"><a href="#使用SSH地址" class="headerlink" title="使用SSH地址"></a>使用SSH地址</h3><p>打开仓库</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-31-24.png" alt="Snipaste_2023-02-14_10-31-24"></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-32-04.png" alt="Snipaste_2023-02-14_10-32-04"></p>
+<p>打开博客根目录的<code>_config.yml</code>文件</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-35-18.png" alt="Snipaste_2023-02-14_10-35-18"></p>
+<p><code>type</code>确认为<code>git</code>，把刚才复制到的<code>ssh</code>地址贴到<code>repo: </code>的后面，保存</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/Snipaste_2023-02-14_10-38-28.png" alt="Snipaste_2023-02-14_10-38-28"></p>
+<h3 id="以上两种方法均不可行则暴力解决"><a href="#以上两种方法均不可行则暴力解决" class="headerlink" title="以上两种方法均不可行则暴力解决"></a>以上两种方法均不可行则暴力解决</h3><p>到了这一步，大多是因为<code>git </code>进行<code>push</code>或者<code>hexo d</code>的时候改变了一些<code>.deploy_git</code>文件下的内容而产生的问题</p>
+<p>因此解决办法为：</p>
+<ol>
+<li>打开博客根目录，删除<code>.deploy_git</code>文件夹</li>
+<li>输入<code>git config --global core.autocrlf false</code></li>
+<li>然后，依次执行：<br><code>hexo clean</code><br><code>hexo g</code><br><code>hexo d</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>博客搭建中的问题</tag>
+      </tags>
+  </entry>
 </search>
