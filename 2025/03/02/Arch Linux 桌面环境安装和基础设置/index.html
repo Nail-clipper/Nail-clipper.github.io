@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/congyu.jpg">
+  <link rel="icon" href="/img/congyu.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Nail Clipper">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本文将介绍 Arch Linux 桌面环境和一些必要应用的安装。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arch Linux 桌面环境安装和基础设置">
+<meta property="og:url" content="https://wxwdaydayup.top/2025/03/02/Arch%20Linux%20%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Ciallo～(∠・ω&lt; )⌒★">
+<meta property="og:description" content="本文将介绍 Arch Linux 桌面环境和一些必要应用的安装。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302220930345.png">
+<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302221345917.png">
+<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png">
+<meta property="article:published_time" content="2025-03-02T12:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-02T15:26:54.357Z">
+<meta property="article:author" content="Nail Clipper">
+<meta property="article:tag" content="Arch">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302220930345.png">
+  
+  
+  
+  <title>Arch Linux 桌面环境安装和基础设置 - Ciallo～(∠・ω&lt; )⌒★</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wxwdaydayup.top","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Ciallo～(∠・ω< )⌒★" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Ciallo～(∠・ω&lt; )⌒★</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Arch Linux 桌面环境安装和基础设置"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-02 20:00" pubdate>
+          2025年3月2日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          24 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Arch Linux 桌面环境安装和基础设置</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2025-03-02T23:26:54+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本文将介绍 Arch Linux 桌面环境和一些必要应用的安装，直入正题，在这一切之前，我们需要先确认NetworkManager 服务和 OpenSSH 服务的安装和开启：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -S NetworkManager		<span class="hljs-comment">#安装NetworkManager服务</span><br>pacman -S OpenSSH				<span class="hljs-comment">#安装OpenSSH服务</span><br>systemctl start NetworkManager	<span class="hljs-comment">#开启NetworkManager服务</span><br>systemctl start OpenSSH			<span class="hljs-comment">#开启OpenSSH服务</span><br>systemctl <span class="hljs-built_in">enable</span> NetworkManager	<span class="hljs-comment">#设置NetworkManager服务开机自启</span><br>systemctl <span class="hljs-built_in">enable</span> OpenSSH		<span class="hljs-comment">#设置OpenSSH服务开机自启</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="01-确保系统为最新"><a href="#01-确保系统为最新" class="headerlink" title="01. 确保系统为最新"></a>01. 确保系统为最新</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -Syyu    <span class="hljs-comment">#升级系统中全部包</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="02-准备非-root-用户"><a href="#02-准备非-root-用户" class="headerlink" title="02. 准备非 root 用户"></a>02. 准备非 root 用户</h2><p>添加用户，比如新增加的用户叫 testuser</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">useradd -m -G wheel -s /bin/bash testuser  <span class="hljs-comment">#wheel附加组可sudo，以root用户执行命令 -m同时创建用户家目录</span><br></code></pre></td></tr></table></figure>
+
+<p>设置新用户 testuser 的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">passwd testuser<br></code></pre></td></tr></table></figure>
+
+<p>编辑 sudoers 配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">EDITOR=vim visudo  <span class="hljs-comment"># 需要以 root 用户运行 visudo 命令</span><br></code></pre></td></tr></table></figure>
+
+<p>找到下面这样的一行，把前面的注释符号 <code>#</code> 去掉，<code>:wq</code> 保存并退出即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#%wheel ALL=(ALL:ALL) NOPASSWD: ALL</span><br></code></pre></td></tr></table></figure>
+
+<p>这里稍微解释一下 %wheel 代表是 wheel 组，百分号是前缀 ALL&#x3D; 代表在所有主机上都生效(如果把同样的<code>sudoers</code>文件下发到了多个主机上) (ALL) 代表可以成为任意目标用户 ALL 代表可以执行任意命令 一个更详细的例子:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">%mailadmin   snow,rain=(root) /usr/sbin/postfix, /usr/sbin/postsuper, /usr/bin/doveadm<br>nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload<br></code></pre></td></tr></table></figure>
+
+<p>组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 “snow” 和 “rain”这两台主机上执行 用户 nobody 可以以 root 用户执行<code>rndc reload</code>命令。可以在所有主机上执行。同时可以不输入密码。（正常来说 sudo 都是要求输入调用方的密码的）</p>
+<h2 id="03-安装-KDE-Plasma-桌面环境"><a href="#03-安装-KDE-Plasma-桌面环境" class="headerlink" title="03. 安装 KDE Plasma 桌面环境"></a>03. 安装 KDE Plasma 桌面环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -S plasma-meta konsole dolphin  <span class="hljs-comment">#安装plasma-meta元软件包以及终端和文件管理器</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="04-配置-greeter-sddm"><a href="#04-配置-greeter-sddm" class="headerlink" title="04. 配置 greeter sddm"></a>04. 配置 greeter sddm</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> sddm<br></code></pre></td></tr></table></figure>
+
+<h2 id="05-设置交换文件-swap-（可选）"><a href="#05-设置交换文件-swap-（可选）" class="headerlink" title="05. 设置交换文件 swap （可选）"></a>05. 设置交换文件 swap （可选）</h2><p>在桌面环境中，交换分区或文件用来实现休眠(hibernate)的功能，即将当前环境保存在磁盘的交换文件或分区部分。除此之外，某些特定软件需要 swap 才可以正确运行。交换文件与分区性能相同，且交换文件更为灵活，可随时变更大小，增加与删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">dd</span> <span class="hljs-keyword">if</span>=/dev/zero of=/swapfile bs=1M count=4096 status=progress <span class="hljs-comment">#创建4G的交换空间 大小根据需要自定</span><br><span class="hljs-built_in">chmod</span> 600 /swapfile <span class="hljs-comment">#设置正确的权限</span><br>mkswap /swapfile <span class="hljs-comment">#格式化swap文件</span><br>swapon /swapfile <span class="hljs-comment">#启用swap文件</span><br></code></pre></td></tr></table></figure>
+
+<p>最后，向&#x2F;etc&#x2F;fstab 中<strong>追加</strong>如下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/swapfile none swap defaults 0 0<br></code></pre></td></tr></table></figure>
+
+<p>KDE 自身提供开箱即用的睡眠功能(suspend)，即将系统挂起到内存，消耗少量的电量。休眠(hibernate)会将系统挂起到交换分区或文件，几乎不消耗电量。睡眠功能已可满足绝大多数人的需求，如果你一定需要休眠功能，可以参考官方文档（<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate%EF%BC%89%E8%AE%BE%E7%BD%AE%E4%BC%91%E7%9C%A0%E7%9B%B8%E5%85%B3%E6%AD%A5%E9%AA%A4%E3%80%82">https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate）设置休眠相关步骤。</a></p>
+<h2 id="06-开启-32-位支持库"><a href="#06-开启-32-位支持库" class="headerlink" title="06. 开启 32 位支持库"></a>06. 开启 32 位支持库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /etc/pacman.conf<br></code></pre></td></tr></table></figure>
+
+<p>去掉[multilib]一节中两行的注释，来开启 32 位库支持。</p>
+<p>最后:wq 保存退出，刷新 pacman 数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -Syyu<br></code></pre></td></tr></table></figure>
+
+<p>重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302220930345.png" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302221345917.png" srcset="/img/loading.gif" lazyload></div></div><div class="group-image-row"></div></div>
+
+<h2 id="07-安装基础功能包"><a href="#07-安装基础功能包" class="headerlink" title="07. 安装基础功能包"></a>07. 安装基础功能包</h2><p>进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。</p>
+<p>首先检查桌面环境中的网络设置：</p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png" srcset="/img/loading.gif" lazyload alt="image-20250302222412385"></p>
+<p>接下来安装一些基础功能包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S sof-firmware alsa-firmware alsa-ucm-conf                     <span class="hljs-comment">#一些可能需要的声音固件</span><br><span class="hljs-built_in">sudo</span> pacman -S ntfs-3g                                                      <span class="hljs-comment">#识别NTFS格式的硬盘</span><br><span class="hljs-built_in">sudo</span> pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   <span class="hljs-comment">#安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题</span><br><span class="hljs-built_in">sudo</span> pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra             <span class="hljs-comment">#安装谷歌开源字体及表情</span><br><span class="hljs-built_in">sudo</span> pacman -S firefox chromium                                             <span class="hljs-comment">#安装常用的火狐、谷歌浏览器</span><br><span class="hljs-built_in">sudo</span> pacman -S ark                                                          <span class="hljs-comment">#与dolphin同用右键解压</span><br><span class="hljs-built_in">sudo</span> pacman -S p7zip unrar unarchiver lzop lrzip                            <span class="hljs-comment">#安装ark可选依赖</span><br><span class="hljs-built_in">sudo</span> pacman -S packagekit-qt5 packagekit appstream-qt appstream             <span class="hljs-comment">#确保Discover(软件中心）可用 需重启</span><br><span class="hljs-built_in">sudo</span> pacman -S gwenview                                                     <span class="hljs-comment">#图片查看器</span><br><span class="hljs-built_in">sudo</span> pacman -S git wget kate <span class="hljs-built_in">bind</span>                                           <span class="hljs-comment">#一些工具</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>不要安装过多字体：在字体超过 255 种时，某些 QT 程序可能无法正确显示某些表情和符号</p>
+</blockquote>
+<h2 id="08-设置-DNS"><a href="#08-设置-DNS" class="headerlink" title="08. 设置 DNS"></a>08. 设置 DNS</h2><p>一般来说，如今大多电脑连接的路由器是可以自动处理 DNS 的，如果你的路由器不能处理，则需要额外进行 DNS 的设置。同时，如果使用 ISP 提供的默认 DNS,你的网络访问记录将存在更大的，被泄露或被当局存储记录的风险。除此之外，使用 ISP 提供的 DNS 还有可能将某些服务解析至一些已经失效或劣化的服务器。即使你的网络环境可以自动处理 DNS 设置，我们还是建议你使用可信的国际通用 DNS 设置。如下的配置将固定使用谷歌的 DNS,但是网络访问延迟可能增加。在阅读完随后的代理设置一节后，你的 DNS 请求将均通过代理发送，这将在 DNS 发送方面最大限度的保障你的隐私和安全。</p>
+<p>vim 编辑<code>/etc/resolv.conf</code>，删除已有条目，并将如下内容加入其中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">nameserver 8.8.8.8<br>nameserver 2001:4860:4860::8888<br>nameserver 8.8.4.4<br>nameserver 2001:4860:4860::8844<br></code></pre></td></tr></table></figure>
+
+<p>如果你的路由器可以自动处理 DNS,resolvconf 会在每次网络连接时用路由器的设置覆盖本机&#x2F;etc&#x2F;resolv.conf 中的设置，执行如下命令加入不可变标志，使其不能覆盖如上加入的配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> chattr +i /etc/resolv.conf<br></code></pre></td></tr></table></figure>
+
+<h2 id="09-设置系统为中文"><a href="#09-设置系统为中文" class="headerlink" title="09. 设置系统为中文"></a>09. 设置系统为中文</h2><p>打开 <em>System Settings</em> &gt; _Regional Settings 在语言中添加中文加入，应用即可</p>
+<p>接下来编辑 <code>~/.config/plasma-localerc</code> ,将其中的 LANG 值更改为 zh_CN.UTF-8</p>
+<h2 id="10-安装yay"><a href="#10-安装yay" class="headerlink" title="10. 安装yay"></a>10. 安装yay</h2><p>AUR 为 archlinux user repository。任何用户都可以上传自己制作的 AUR 包，这也是 Arch Linux 可用软件众多的原因。由于任何人都可上传，也存在对应的风险，一般选用大众认可的包即可。</p>
+<p>可以使用 <a target="_blank" rel="noopener" href="https://github.com/Jguer/yay">yay</a> 或 <a target="_blank" rel="noopener" href="https://github.com/Morganamilo/paru">paru</a> 安装 AUR 中的包。首先切换至普通用户：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">su - nailclipper<br></code></pre></td></tr></table></figure>
+
+<p>刷新包缓存并更新系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -Syu<br></code></pre></td></tr></table></figure>
+
+<p>安装所需的 <code>base-devel</code>（包含 <code>makepkg</code> 等工具）和 <code>git</code>（克隆 yay 的 Git 仓库所需的）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S --needed base-devel git<br></code></pre></td></tr></table></figure>
+
+<p>使用 <code>--needed</code> 标志，它不会重新安装已经安装的软件包</p>
+<p>使用 git 命令克隆 Yay 仓库。你可以在系统中的任何位置执行此操作，无论是主目录还是其他目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://aur.archlinux.org/yay.git<br></code></pre></td></tr></table></figure>
+
+<p>完成后，切换到克隆的目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> yay<br></code></pre></td></tr></table></figure>
+
+<p>事实上，你是在构建它。ls 后你将在此处看到 <code>PKGBUILD</code> 文件。使用以下命令从此处构建包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">makepkg -si<br></code></pre></td></tr></table></figure>
+
+<p>按照屏幕上的说明进行操作。当系统要求你确认时，按 <code>Y</code></p>
+<p>该过程完成后，通过检查其版本来验证 Yay 是否已成功安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yay --version<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用 Yay 进行包管理:</p>
+<p>搜索软件包：<code>yay search_term</code></p>
+<p>安装软件包：<code>yay -S package_name</code></p>
+<p>删除软件包：<code>yay -R package_name</code></p>
+<p>要删除包及其依赖项：<code>yay -Rns package_name</code></p>
+<p>仅升级 AUR 包：<code>yay -Sua</code></p>
+<p>将 Yay 升级到新版本：<code>yay -Sua</code></p>
+<p>从 Arch 系统中删除 Yay：<code>sudo pacman -Rs yay</code></p>
+</blockquote>
+<h2 id="11-安装输入法"><a href="#11-安装输入法" class="headerlink" title="11. 安装输入法"></a>11. 安装输入法</h2><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Fcitx5 官方文档</a> 中文及日文输入法均体验良好</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S fcitx5-im <span class="hljs-comment">#基础包组</span><br><span class="hljs-built_in">sudo</span> pacman -S fcitx5-chinese-addons <span class="hljs-comment">#官方中文输入引擎</span><br><span class="hljs-built_in">sudo</span> pacman -S fcitx5-anthy <span class="hljs-comment">#日文输入引擎</span><br>yay -S fcitx5-pinyin-moegirl <span class="hljs-comment">#萌娘百科词库 由于中国大陆政府对github封锁，你可能在此卡住。如卡住，可根据后文设置好代理后再安装</span><br><span class="hljs-built_in">sudo</span> pacman -S fcitx5-pinyin-zhwiki <span class="hljs-comment">#中文维基百科词库</span><br><span class="hljs-built_in">sudo</span> pacman -S fcitx5-material-color <span class="hljs-comment">#主题</span><br></code></pre></td></tr></table></figure>
+
+<p>设置环境变量：编辑文件 <code>EDITOR=vim sudoedit /etc/environment</code> 加入以下内容。konsole 以及 dolphin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">GTK_IM_MODULE=fcitx<br>QT_IM_MODULE=fcitx<br>XMODIFIERS=@im=fcitx<br>SDL_IM_MODULE=fcitx<br></code></pre></td></tr></table></figure>
+
+<p>先点击<code>运行Fcitx</code>，打开 <em>系统设置</em> &gt; <em>区域设置</em> &gt; <em>输入法</em>，拼音为默认添加项。如你还需要更多输入法如五笔，则再点击<code>添加输入法</code>，找到简体中文下的五笔 ，点击添加即可加入五笔输入法。</p>
+<p>接下来点击 <em>拼音</em> 右侧的配置按钮，点选<code>云拼音</code>和<code>在程序中显示预编辑文本</code> 最后应用。</p>
+<p>回到输入法设置，点击<code>配置附加组件</code>，找到 <em>经典用户界面</em> 在主题里选择一个你喜欢的颜色 最后应用。</p>
+<p>注销，重新登陆，就可以发现已经可以在各个软件中输入中文了</p>
+<blockquote>
+<p>RIME 中州韵输入法引擎（英语：Rime Input Method Engine，又称 Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在 GitHub。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows 发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版 fcitx-rime、Windows 发行版 PRIME、macOS 发行版 XIME、Android 发行版同文输入法（Trime）、iOS 发行版 iRime。</p>
+</blockquote>
+<p>这里介绍一下 fcitx5-rime 的安装方式 ‘’’bash sudo pacman -S fcitx5-rime #不是 fcitx-rime，因为 fcitx 与 fcitx5 有版本冲突 ‘’’ 然后打开 打开 <em>系统设置</em> &gt; <em>区域设置</em> &gt; <em>输入法</em> &gt;,点击添加输入法，找到 RIME，即可添加 RIME 输入法。 RIME 输入法默认是繁体字按 Ctrl+~,即可打开选单，使用键盘上的←→，选择朙月拼音·简化字,回车。</p>
+<h2 id="12-配置系统默认编辑器"><a href="#12-配置系统默认编辑器" class="headerlink" title="12. 配置系统默认编辑器"></a>12. 配置系统默认编辑器</h2><p>默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑 <code>EDITOR=vim sudoedit /etc/profile</code> 文件，加入如下内容，将 vim 设置为默认 EDITOR</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> EDITOR=<span class="hljs-string">&#x27;vim&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>这样就不用在每次执行命令时都指定一遍 <code>EDITOR=vim</code> 了</p>
+<h2 id="13-启用蓝牙相关功能"><a href="#13-启用蓝牙相关功能" class="headerlink" title="13. 启用蓝牙相关功能"></a>13. 启用蓝牙相关功能</h2><p>对于蓝牙及无线网卡，在 Linux 下推荐使用英特尔产品。博通以及瑞昱产品在兼容性，稳定性方面在 Linux 中表现很差，会带来很多不必要的麻烦，如在驱动，BLE 方面的支持很差或者没有。</p>
+<p>如果你有蓝牙设备，需要安装蓝牙软件包并启用蓝牙服务。随后在系统设置中进行添加设备与连接即可。注意，文件传输功能现在需要额外安装包<code>bluez-obex</code>，其功能与 2024 年已从 <code>bluez</code> 包中分离出来。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S bluez bluez-utils bluez-obex<br><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> --now bluetooth<br></code></pre></td></tr></table></figure>
+
+<p>设置开机自动启用蓝牙设备，编辑<code>/etc/bluetooth/main.conf</code>文件，将<code>AutoEnable</code>设置为 true 即可。如果一些设备依然无法实现开机自动连接，尝试继续将<code>Experimental</code>以及<code>KernelExperimental</code>两项的值设置为 true。</p>
+<p>博通（Broadcom）网卡在 Linux 下的支持度很差，无论是无线还是蓝牙模块。对于无线功能来说，一般直接安装 broadcom-wl 包即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S broadcom-wl<br></code></pre></td></tr></table></figure>
+
+<p>对于蓝牙模块，需要查阅<a target="_blank" rel="noopener" href="https://github.com/winterheart/broadcom-bt-firmware">broadcom-bt-firmware</a>仓库，在 brcm 文件夹中找到适合于自己网卡型号的 hcd 文件，将其下载并置于 <code>/lib/firmware/brcm</code> 文件夹中后重启即可。如果你无法确认自己的网卡型号对应哪一个 hcd 文件，那就全部下载并置于文件夹中。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Arch/" class="print-no-link">#Arch</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Arch Linux 桌面环境安装和基础设置</div>
+      <div>https://wxwdaydayup.top/2025/03/02/Arch Linux 桌面环境安装和基础设置/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Nail Clipper</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/02/Arch%20Linux%20%E6%97%A0%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" title="Arch Linux 无图形化操作系统安装指南">
+                        <span class="hidden-mobile">Arch Linux 无图形化操作系统安装指南</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
