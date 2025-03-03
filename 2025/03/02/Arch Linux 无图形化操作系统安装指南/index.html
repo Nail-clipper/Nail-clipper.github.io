@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302201304960.png">
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302203130971.png">
 <meta property="article:published_time" content="2025-03-02T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-02T15:44:21.469Z">
+<meta property="article:modified_time" content="2025-03-03T07:12:32.272Z">
 <meta property="article:author" content="Nail Clipper">
 <meta property="article:tag" content="Arch">
 <meta property="article:tag" content="Linux">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.9k 字
+          5k 字
         
       </span>
     
@@ -297,7 +297,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-02T23:44:21+08:00
+                    本文最后更新于 2025-03-03T15:12:32+08:00
                   
                   
 
@@ -347,11 +347,12 @@
 <li>调整硬盘启动顺序<br>在类似名为 boot 的选项卡中，找到类似名为 Boot Options(名称可能略有差异)的设置选项，将 USB 优盘的启动顺序调至首位。</li>
 <li>准备安装<br>最后保存 BIOS 设置并退出，一般的按键是 F10。此时系统重启，不出意外你应该已经进入 archlinux 的安装界面。</li>
 </ol>
-<h2 id="02-Arch-Linux-基础安装"><a href="#02-Arch-Linux-基础安装" class="headerlink" title="02. Arch Linux 基础安装"></a>02. Arch Linux 基础安装</h2><p>本节从安装最基础的无图形化 ArchLinux 系统开始。（官方指南：<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Installation_guide%EF%BC%89">https://wiki.archlinux.org/title/Installation_guide）</a></p>
+<h2 id="02-Arch-Linux-基础安装"><a href="#02-Arch-Linux-基础安装" class="headerlink" title="02. Arch Linux 基础安装"></a>02. Arch Linux 基础安装</h2><p>本节从安装最基础的无图形化 ArchLinux 系统开始。</p>
+<p>（官方指南：<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Installation_guide%EF%BC%89">https://wiki.archlinux.org/title/Installation_guide）</a></p>
 <p>开机后应显示如下界面：</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302183935600.png" srcset="/img/loading.gif" lazyload alt="image-20250302183935600"></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302183935600.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="0">
-<li>检查 SSH 服务是否开启<br>我们安装Arch的时候是完全被允许使用SSH来远程连接的，关于我为什么要提这个问题，因为我们安装的时候是无法在虚拟机中粘贴的，如果我们能够使用物理机Shell工具远程连接到Arch的安装进程上，就可以正常的来粘贴命令了，这样的话将会起到事半功倍的效果。如果你没有相关的工具，那么也不影响后续的操作；如果你有，请使用<a href="mailto:&#114;&#x6f;&#x6f;&#x74;&#64;&#120;&#120;&#x78;&#46;&#120;&#120;&#x78;&#x2e;&#120;&#120;&#x78;&#x2e;&#120;&#120;&#x78;">root@xxx.xxx.xxx.xxx</a>来进行连接，ip a命令可以查看 Arch 的 IP，passwd 可以修改 root 的密码。闲话少说，基本的配置完成，我们还是步入正轨来安装Arch吧。</li>
+<li>检查 SSH 服务是否开启<br>我们安装Arch的时候是完全被允许使用SSH来远程连接的，关于我为什么要提这个问题，因为我们安装的时候是无法在虚拟机中粘贴的，如果我们能够使用物理机Shell工具远程连接到Arch的安装进程上，就可以正常的来粘贴命令了，这样的话将会起到事半功倍的效果。如果你没有相关的工具，那么也不影响后续的操作；如果你有，请使用<a href="mailto:&#x72;&#111;&#111;&#116;&#64;&#x78;&#x78;&#x78;&#46;&#x78;&#x78;&#120;&#x2e;&#x78;&#x78;&#x78;&#x2e;&#x78;&#120;&#120;">root@xxx.xxx.xxx.xxx</a>来进行连接，ip a命令可以查看 Arch 的 IP，passwd 可以修改 root 的密码（记得打开小键盘数字锁）。闲话少说，基本的配置完成，我们还是步入正轨来安装Arch吧。</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl status sshd<br><span class="hljs-comment">#若没有开启，便将其开启</span><br>systemctl start sshd<br>systemctl <span class="hljs-built_in">enable</span> sshd<br><span class="hljs-comment">#查看 IP</span><br>ip a<br><span class="hljs-comment">#修改 root 密码</span><br>passwd root<br><span class="hljs-comment">#此时便可以远程登陆了</span><br></code></pre></td></tr></table></figure>
 
@@ -517,6 +518,12 @@
 <blockquote>
 <p>除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。</p>
 </blockquote>
+</li>
+<li><p>添加 root 密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">passwd<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装 ssh 服务和 NetworkManager 服务并设置开机自启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -S openssh<br>pacman -S networkmanager<br>systemctl <span class="hljs-built_in">enable</span> sshd<br>systemctl <span class="hljs-built_in">enable</span> NetworkManager<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>完成安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span>                <span class="hljs-comment"># 退回安装环境#</span><br>umount -R  /mnt     <span class="hljs-comment"># 卸载新分区</span><br>reboot              <span class="hljs-comment"># 重启</span><br></code></pre></td></tr></table></figure>
