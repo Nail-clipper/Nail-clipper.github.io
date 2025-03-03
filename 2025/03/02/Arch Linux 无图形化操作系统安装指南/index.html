@@ -352,7 +352,7 @@
 <p>开机后应显示如下界面：</p>
 <p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302183935600.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="0">
-<li>检查 SSH 服务是否开启<br>我们安装Arch的时候是完全被允许使用SSH来远程连接的，关于我为什么要提这个问题，因为我们安装的时候是无法在虚拟机中粘贴的，如果我们能够使用物理机Shell工具远程连接到Arch的安装进程上，就可以正常的来粘贴命令了，这样的话将会起到事半功倍的效果。如果你没有相关的工具，那么也不影响后续的操作；如果你有，请使用<a href="mailto:&#x72;&#111;&#111;&#116;&#64;&#x78;&#x78;&#x78;&#46;&#x78;&#x78;&#120;&#x2e;&#x78;&#x78;&#x78;&#x2e;&#x78;&#120;&#120;">root@xxx.xxx.xxx.xxx</a>来进行连接，ip a命令可以查看 Arch 的 IP，passwd 可以修改 root 的密码（记得打开小键盘数字锁）。闲话少说，基本的配置完成，我们还是步入正轨来安装Arch吧。</li>
+<li>检查 SSH 服务是否开启<br>我们安装Arch的时候是完全被允许使用SSH来远程连接的，关于我为什么要提这个问题，因为我们安装的时候是无法在虚拟机中粘贴的，如果我们能够使用物理机Shell工具远程连接到Arch的安装进程上，就可以正常的来粘贴命令了，这样的话将会起到事半功倍的效果。如果你没有相关的工具，那么也不影响后续的操作；如果你有，请使用<a href="mailto:&#114;&#111;&#x6f;&#x74;&#x40;&#x78;&#120;&#x78;&#46;&#120;&#120;&#120;&#x2e;&#120;&#x78;&#120;&#46;&#120;&#120;&#x78;">root@xxx.xxx.xxx.xxx</a>来进行连接，ip a命令可以查看 Arch 的 IP，passwd 可以修改 root 的密码（记得打开小键盘数字锁）。闲话少说，基本的配置完成，我们还是步入正轨来安装Arch吧。</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl status sshd<br><span class="hljs-comment">#若没有开启，便将其开启</span><br>systemctl start sshd<br>systemctl <span class="hljs-built_in">enable</span> sshd<br><span class="hljs-comment">#查看 IP</span><br>ip a<br><span class="hljs-comment">#修改 root 密码</span><br>passwd root<br><span class="hljs-comment">#此时便可以远程登陆了</span><br></code></pre></td></tr></table></figure>
 
@@ -651,8 +651,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/27/Shell%20%E7%BC%96%E7%A8%8B%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%EF%BC%88Fedora%2041%EF%BC%89/" title="Shell 编程快速入门（Fedora 41）">
-                        <span class="hidden-mobile">Shell 编程快速入门（Fedora 41）</span>
+                      <a href="/2025/02/27/Shell%20%E7%BC%96%E7%A8%8B%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="Shell 编程快速入门">
+                        <span class="hidden-mobile">Shell 编程快速入门</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

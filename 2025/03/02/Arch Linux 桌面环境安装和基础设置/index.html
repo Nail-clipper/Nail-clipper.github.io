@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302221345917.png">
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png">
 <meta property="article:published_time" content="2025-03-02T12:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-03T10:03:58.854Z">
+<meta property="article:modified_time" content="2025-03-03T10:30:20.259Z">
 <meta property="article:author" content="Nail Clipper">
 <meta property="article:tag" content="Arch">
 <meta property="article:tag" content="Linux">
@@ -282,7 +282,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-03T18:03:58+08:00
+                    本文最后更新于 2025-03-03T18:30:20+08:00
                   
                   
 
@@ -399,7 +399,7 @@
 <p>RIME 中州韵输入法引擎（英语：Rime Input Method Engine，又称 Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在 GitHub。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows 发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版 fcitx-rime、Windows 发行版 PRIME、macOS 发行版 XIME、Android 发行版同文输入法（Trime）、iOS 发行版 iRime。</p>
 <p>这里介绍一下 fcitx5-rime 的安装方式 ‘’’bash sudo pacman -S fcitx5-rime #不是 fcitx-rime，因为 fcitx 与 fcitx5 有版本冲突 ‘’’ 然后打开 打开 <em>系统设置</em> &gt; <em>区域设置</em> &gt; <em>输入法</em> &gt;,点击添加输入法，找到 RIME，即可添加 RIME 输入法。 RIME 输入法默认是繁体字按 Ctrl+~,即可打开选单，使用键盘上的←→，选择朙月拼音·简化字,回车。</p>
 </blockquote>
-<h2 id="12-配置系统默认编辑器"><a href="#12-配置系统默认编辑器" class="headerlink" title="12. 配置系统默认编辑器"></a>12. 配置系统默认编辑器</h2><p>默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑 <code>EDITOR=vim sudoedit /etc/profile</code> 文件，加入如下内容，将 vim 设置为默认 EDITOR</p>
+<h2 id="12-配置系统默认编辑器"><a href="#12-配置系统默认编辑器" class="headerlink" title="12. 配置系统默认编辑器"></a>12. 配置系统默认编辑器</h2><p>默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑 <code>sudo vim /etc/profile</code> 文件，在文件的末尾加入如下内容，将 vim 设置为默认 EDITOR</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> EDITOR=<span class="hljs-string">&#x27;vim&#x27;</span><br></code></pre></td></tr></table></figure>
 
 <p>这样就不用在每次执行命令时都指定一遍 <code>EDITOR=vim</code> 了</p>
