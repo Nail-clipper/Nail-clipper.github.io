@@ -22,7 +22,7 @@
     <meta name="description" content="本文将介绍 Arch Linux 桌面环境和一些必要应用的安装。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Arch Linux 桌面环境安装和基础设置">
-<meta property="og:url" content="https://wxwdaydayup.top/2025/03/02/Arch%20Linux%20%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:url" content="https://wxwdaydayup.top/Arch%20Linux%20%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Ciallo～(∠・ω&lt; )⌒★">
 <meta property="og:description" content="本文将介绍 Arch Linux 桌面环境和一些必要应用的安装。">
 <meta property="og:locale" content="zh_CN">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302221345917.png">
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png">
 <meta property="article:published_time" content="2025-03-02T12:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-03T10:30:20.259Z">
+<meta property="article:modified_time" content="2025-03-04T14:47:17.017Z">
 <meta property="article:author" content="Nail Clipper">
 <meta property="article:tag" content="Arch">
 <meta property="article:tag" content="Linux">
@@ -282,7 +282,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-03T18:30:20+08:00
+                    本文最后更新于 2025-03-04T22:47:17+08:00
                   
                   
 
@@ -335,7 +335,7 @@
 
 <h2 id="07-安装基础功能包"><a href="#07-安装基础功能包" class="headerlink" title="07. 安装基础功能包"></a>07. 安装基础功能包</h2><p>进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。</p>
 <p>首先检查桌面环境中的网络设置：</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png" srcset="/img/loading.gif" lazyload alt="image-20250302222412385"></p>
+<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png" srcset="/img/loading.gif" lazyload></p>
 <p>接下来安装一些基础功能包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S sof-firmware alsa-firmware alsa-ucm-conf                     <span class="hljs-comment">#一些可能需要的声音固件</span><br><span class="hljs-built_in">sudo</span> pacman -S ntfs-3g                                                      <span class="hljs-comment">#识别NTFS格式的硬盘</span><br><span class="hljs-built_in">sudo</span> pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   <span class="hljs-comment">#安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题</span><br><span class="hljs-built_in">sudo</span> pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra             <span class="hljs-comment">#安装谷歌开源字体及表情</span><br><span class="hljs-built_in">sudo</span> pacman -S firefox chromium                                             <span class="hljs-comment">#安装常用的火狐、谷歌浏览器</span><br><span class="hljs-built_in">sudo</span> pacman -S ark                                                          <span class="hljs-comment">#与dolphin同用右键解压</span><br><span class="hljs-built_in">sudo</span> pacman -S p7zip unrar unarchiver lzop lrzip                            <span class="hljs-comment">#安装ark可选依赖</span><br><span class="hljs-built_in">sudo</span> pacman -S packagekit-qt5 packagekit appstream-qt appstream             <span class="hljs-comment">#确保Discover(软件中心）可用 需重启</span><br><span class="hljs-built_in">sudo</span> pacman -S gwenview                                                     <span class="hljs-comment">#图片查看器</span><br><span class="hljs-built_in">sudo</span> pacman -S git wget kate <span class="hljs-built_in">bind</span>                                           <span class="hljs-comment">#一些工具</span><br></code></pre></td></tr></table></figure>
 
@@ -460,7 +460,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Arch Linux 桌面环境安装和基础设置</div>
-      <div>https://wxwdaydayup.top/2025/03/02/Arch Linux 桌面环境安装和基础设置/</div>
+      <div>https://wxwdaydayup.top/Arch Linux 桌面环境安装和基础设置/</div>
     </div>
     <div class="license-meta">
       
@@ -504,17 +504,11 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/04/Arch%20Linux%20%E9%AD%94%E6%B3%95%E5%AD%A6%E9%99%A2/" title="Arch Linux 魔法学院">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Arch Linux 魔法学院</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/02/Arch%20Linux%20%E6%97%A0%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" title="Arch Linux 无图形化操作系统安装指南">
+                      <a href="/Arch%20Linux%20%E6%97%A0%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" title="Arch Linux 无图形化操作系统安装指南">
                         <span class="hidden-mobile">Arch Linux 无图形化操作系统安装指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
