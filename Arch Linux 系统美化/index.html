@@ -19,27 +19,23 @@
   <meta name="author" content="Nail Clipper">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Fluid 是基于Hexo的一款Material Design风格的主题，由Fluid-dev负责开发与维护。">
+    <meta name="description" content="本文讲述如何配置以让 KDE 桌面环境看起来更加拥有美感。 原则：美化不应该付出大量的时间折腾，既没有实际用处，也没有意义。花最少的时间完成性价比最高的美化始终是第一原则。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Fluid主题搭建Hexo博客的一些常用命令">
-<meta property="og:url" content="https://wxwdaydayup.top/%E5%9F%BA%E4%BA%8EFluid%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="Arch Linux 系统美化">
+<meta property="og:url" content="https://wxwdaydayup.top/Arch%20Linux%20%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96/index.html">
 <meta property="og:site_name" content="Ciallo～(∠・ω&lt; )⌒★">
-<meta property="og:description" content="Fluid 是基于Hexo的一款Material Design风格的主题，由Fluid-dev负责开发与维护。">
+<meta property="og:description" content="本文讲述如何配置以让 KDE 桌面环境看起来更加拥有美感。 原则：美化不应该付出大量的时间折腾，既没有实际用处，也没有意义。花最少的时间完成性价比最高的美化始终是第一原则。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217152817426.png">
-<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153049230.png">
-<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153534894.png">
-<meta property="article:published_time" content="2025-02-05T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-02T15:42:58.515Z">
+<meta property="article:published_time" content="2025-03-10T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-09T09:20:29.586Z">
 <meta property="article:author" content="Nail Clipper">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="Arch">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217152817426.png">
   
   
   
-  <title>基于Fluid主题搭建Hexo博客的一些常用命令 - Ciallo～(∠・ω&lt; )⌒★</title>
+  <title>Arch Linux 系统美化 - Ciallo～(∠・ω&lt; )⌒★</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="基于Fluid主题搭建Hexo博客的一些常用命令"></span>
+            <span id="subtitle" data-typed-text="Arch Linux 系统美化"></span>
           
         </div>
 
@@ -217,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-05 10:00" pubdate>
-          2025年2月5日 上午
+        <time datetime="2025-03-10 10:00" pubdate>
+          2025年3月10日 上午
         </time>
       </span>
     
@@ -229,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          709 字
+          1.1k 字
         
       </span>
     
@@ -240,7 +236,7 @@
         
         
         
-          6 分钟
+          10 分钟
         
       </span>
     
@@ -277,12 +273,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">基于Fluid主题搭建Hexo博客的一些常用命令</h1>
+            <h1 id="seo-header">Arch Linux 系统美化</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-02T23:42:58+08:00
+                    本文最后更新于 2025-03-09T17:20:29+08:00
                   
                   
 
@@ -292,75 +288,48 @@
             
               <div class="markdown-body">
                 
-                <h2 id="1、安装主题"><a href="#1、安装主题" class="headerlink" title="1、安装主题"></a>1、安装主题</h2><h3 id="1-1-获取最新版本"><a href="#1-1-获取最新版本" class="headerlink" title="1.1 获取最新版本"></a>1.1 获取最新版本</h3><p>Hexo 5.0.0 版本以上，通过 npm 直接安装，进入博客目录执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
+                <p>本文讲述如何配置以让 KDE 桌面环境看起来更加拥有美感。 原则：美化不应该付出大量的时间折腾，既没有实际用处，也没有意义。花最少的时间完成性价比最高的美化始终是第一原则。</p>
+<blockquote>
+<p>在 KDE 相关软件更新前后，出现过第三方主题不稳定&#x2F;卡顿的问题，再次强调不要美化魔改的太过，这会添加更多的不确定性，让你的桌面稳定性下降。</p>
+</blockquote>
+<h2 id="01-壁纸"><a href="#01-壁纸" class="headerlink" title="01. 壁纸"></a>01. 壁纸</h2><p>在桌面右键，选择<code>配置桌面</code>。在新出现的窗口中右下角选择<code>添加图片</code>可以选择你想要的图片。其中<code>位置</code>一项选择’缩放，保持比例’，<code>背景</code>一项选择’模糊’。这样你就可以拥有一个成比例，且边缘带有高斯模糊的漂亮的桌面壁纸。</p>
+<h2 id="02-系统主题"><a href="#02-系统主题" class="headerlink" title="02. 系统主题"></a>02. 系统主题</h2><p>使用一个高质量的系统主题可以直线提升系统的美观程度。<em>系统设置</em> &gt; <em>外观</em> &gt; <em>全局主题</em> &gt; <em>获取新的全局主题</em> ，搜索主题 layan，进行设置即可。 顺便说一句，这个主题的作者 vinceliuice 是一位中国大佬，是一位设计师，他设计的主题以及图标的质量都很高，你可以去他的<a target="_blank" rel="noopener" href="https://www.pling.com/u/vinceliuice/">主页</a>为他打分和点赞。</p>
+<blockquote>
+<p>如果切换主题后，windows 键不能呼出菜单，可在左下角右键，配置程序启动器，在键盘快捷键中重新设置<code>windows+F1</code>键，windows 键会显示为 Meta 键。</p>
+</blockquote>
+<h2 id="03-窗口装饰"><a href="#03-窗口装饰" class="headerlink" title="03. 窗口装饰"></a>03. 窗口装饰</h2><p>在 <em>系统设置</em> &gt; <em>外观</em> &gt; <em>窗口装饰</em> 中，获取新窗口装饰，搜索 layan，并应用即可。</p>
+<h2 id="04-系统图标"><a href="#04-系统图标" class="headerlink" title="04. 系统图标"></a>04. 系统图标</h2><p>如果主题中的图标不能满足你，那么可以选择一些自定义的图标。<em>系统设置</em> &gt; <em>外观</em> &gt; <em>图标</em> &gt; <em>获取新图标主题</em> ，搜索图标名 Tela-icon-theme，进行安装设置即可。</p>
+<h2 id="05-SDDM-主题"><a href="#05-SDDM-主题" class="headerlink" title="05. SDDM 主题"></a>05. SDDM 主题</h2><p>你应该注意得到，输入密码时默认的登录界面是很丑的，这里也可以替换掉。<em>系统设置</em> &gt; <em>开机和关机</em> &gt; <em>登录屏幕(SDDM)</em> &gt; <em>获取新登录屏幕</em> ，搜索 SDDM 主题 layan 并设置即可。</p>
+<h2 id="06-欢迎屏幕（splashscreen）"><a href="#06-欢迎屏幕（splashscreen）" class="headerlink" title="06. 欢迎屏幕（splashscreen）"></a>06. 欢迎屏幕（splashscreen）</h2><p>可以对在登录界面后的欢迎屏幕进行美化。 <em>系统设置</em> &gt; <em>外观</em> &gt; <em>欢迎屏幕</em> &gt; <em>获取新欢迎屏幕</em> ，搜索 miku 进行设置即可。这个<code>Snowy Night Miku</code>是我们搜索到的最好看的二刺猿属性的初始界面了。另外，还有一个大佬做了一些二次元主题的欢迎屏幕，但是质量一般，这里是他的<a target="_blank" rel="noopener" href="https://www.pling.com/u/thevladsoft/">主页</a>。</p>
+<h2 id="07-桌面插件"><a href="#07-桌面插件" class="headerlink" title="07. 桌面插件"></a>07. 桌面插件</h2><p>在任务栏空白处右键，选择编辑面板，添加部件。</p>
+<ul>
+<li>Netspeed widget 网速组件，这个很实用</li>
+<li>todolist 任务组件</li>
+</ul>
+<p>然后把你经常使用的软件固定在任务栏即可。</p>
+<p>KDE Plasma 5.22.1 更新后，需要额外安装 ksysguard 才能确保桌面插件的正常运行。<a target="_blank" rel="noopener" href="https://github.com/dfaust/plasma-applet-netspeed-widget/issues/28">相关资料</a></p>
+<h2 id="08-混成器"><a href="#08-混成器" class="headerlink" title="08. 混成器"></a>08. 混成器</h2><p><em>系统设置</em> &gt; <em>显示和监控</em> &gt; <em>混成器</em> 开启混成器</p>
+<h2 id="09-终端样式设置"><a href="#09-终端样式设置" class="headerlink" title="09. 终端样式设置"></a>09. 终端样式设置</h2><p>打开 konsole， <em>设置</em> &gt; <em>编辑当前方案</em> &gt; <em>外观</em> ，选择<code>Red-Black</code> 应用确认即可。</p>
+<h2 id="10-Kvantum-Manager"><a href="#10-Kvantum-Manager" class="headerlink" title="10. Kvantum Manager"></a>10. Kvantum Manager</h2><p>主题配合 Kvantum Manager 可以达到更好的效果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S kvantum<br></code></pre></td></tr></table></figure>
 
-<p>然后在博客目录下创建 <code>_config.fluid.yml</code>，将主题的 <code>config.yml </code> 内容复制过去。</p>
-<h3 id="1-2-指定主题"><a href="#1-2-指定主题" class="headerlink" title="1.2 指定主题"></a>1.2 指定主题</h3><p>修改 Hexo 博客目录中的 <code>_config.yml</code>：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  <span class="hljs-comment"># 指定主题</span><br><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></td></tr></table></figure>
+<p>在<a target="_blank" rel="noopener" href="https://www.pling.com/p/1325246/">这里</a>下载 Layan 的 Kvantum 主题，并解压。打开 Kvantum Manager,选择主题并安装，接下来在<code>Change/Delete Theme</code>中选择 Layan,Use this theme。最后在系统设置，外观中的应用程序风格中选择 kvantum 即可。</p>
+<blockquote>
+<p>如果透明的效果没有显示，确保 KDE 的全局缩放比例为整数倍。或者尝试切换混成器中 openGL 的设置。</p>
+</blockquote>
+<h2 id="11-GRUB-主题"><a href="#11-GRUB-主题" class="headerlink" title="11. GRUB 主题"></a>11. GRUB 主题</h2><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Theme">官方文档</a></p>
+<p>在<a target="_blank" rel="noopener" href="https://www.pling.com/browse/cat/109/order/latest/">pling</a>选择下载你想要的 GRUB 主题，比如这个<a target="_blank" rel="noopener" href="https://www.pling.com/p/1526503/">二刺螈主题</a>。接下来 <code>cd</code> 进解压出来的文件夹，打开 konsole 输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> -r . /usr/share/grub/themes/Nino<br></code></pre></td></tr></table></figure>
 
-<h3 id="1-3-创建关于页"><a href="#1-3-创建关于页" class="headerlink" title="1.3 创建关于页"></a>1.3 创建关于页</h3><p>首次使用主题的「关于页」需要手动创建：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new page about<br></code></pre></td></tr></table></figure>
+<p>以将主题放置在系统的 GRUB 默认文件夹内。 接着编辑 <code>/etc/default/grub</code> 文件，找到 <code>#GRUB_THEME=</code> 一行，将前面的注释去掉，并指向主题的 <code>theme.txt</code> 文件。即</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#GRUB_THEME=</span><br>GRUB_THEME=<span class="hljs-string">&quot;/usr/share/grub/themes/Nino/theme.txt&quot;</span> <span class="hljs-comment">#修改后</span><br></code></pre></td></tr></table></figure>
 
-<p>创建成功后修改 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。</p>
-<p>修改后的文件示例如下：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 标题<br><span class="hljs-section">layout: about</span><br><span class="hljs-section">---</span><br><br>这里写关于页的正文，支持 Markdown, HTML<br></code></pre></td></tr></table></figure>
+<p>然后再在终端输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> grub-mkconfig -o /boot/grub/grub.cfg<br></code></pre></td></tr></table></figure>
 
-<div class="note note-warning">
-            <p>WARNING</p><p><code>layout: about</code> 必须存在，并且不能修改成其他值，否则不会显示头像等样式。</p>
-          </div>
+<p>更新 GRUB ，并重启即可。</p>
+<h2 id="12-开机动画"><a href="#12-开机动画" class="headerlink" title="12. 开机动画"></a>12. 开机动画</h2><p><a target="_blank" rel="noopener" href="https://fedoraproject.org/wiki/Releases/FeatureBetterStartup">Plymouth</a> 是一个来自于 Fedora 社区的提供美化启动图形界面的功能的项目，如有需要，可以参考<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Plymouth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">官方文档</a>进行配置。不建议新手在此项配置上花费太多时间。</p>
 
-<h3 id="1-4-更新主题"><a href="#1-4-更新主题" class="headerlink" title="1.4 更新主题"></a>1.4 更新主题</h3><p>在博客目录下执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm update --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="2、快速开始"><a href="#2、快速开始" class="headerlink" title="2、快速开始"></a>2、快速开始</h2><h3 id="创建一篇新的文章"><a href="#创建一篇新的文章" class="headerlink" title="创建一篇新的文章"></a>创建一篇新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<h3 id="部署到远程服务器"><a href="#部署到远程服务器" class="headerlink" title="部署到远程服务器"></a>部署到远程服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="3、常用语法"><a href="#3、常用语法" class="headerlink" title="3、常用语法"></a>3、常用语法</h2><h3 id="3-1-脚注"><a href="#3-1-脚注" class="headerlink" title="3,1 脚注"></a>3,1 脚注</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">这是一句话[^1]<br>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">这是对应的脚注</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-2-便签"><a href="#3-2-便签" class="headerlink" title="3.2 便签"></a>3.2 便签</h3><p>在 markdown 中加入如下的代码来使用便签：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>可选便签：</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217152817426.png" srcset="/img/loading.gif" lazyload alt="可选便签"></p>
-<div class="note note-warning">
-            <p>WARNING</p><p>使用时 <code>&lt;div class=&quot;note note-primary&quot;&gt;             &lt;p&gt;&lt;code&gt;和&lt;/code&gt;&lt;/p&gt;           &lt;/div&gt;</code> 需单独一行，否则会出现问题</p>
-          </div>
-
-<h3 id="3-3-行内标签"><a href="#3-3-行内标签" class="headerlink" title="3.3 行内标签"></a>3.3 行内标签</h3><p>在 markdown 中加入如下的代码来使用 Label：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% label primary @text %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>可选 Label：</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153049230.png" srcset="/img/loading.gif" lazyload alt="可选Label"></p>
-<h3 id="3-4-折叠块"><a href="#3-4-折叠块" class="headerlink" title="3.4 折叠块"></a>3.4 折叠块</h3><p>使用折叠块，可以折叠代码、图片、文字等任何内容，可以在 markdown 中按如下格式：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% fold info @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>info: 和行内标签类似的可选参数 title: 折叠块上的标题</p>
-<h3 id="3-5-勾选框"><a href="#3-5-勾选框" class="headerlink" title="3.5 勾选框"></a>3.5 勾选框</h3><p>在 markdown 中加入如下的代码来使用 Checkbox：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>text：显示的文字<br>checked：默认是否已勾选，默认 false<br>incline: 是否内联（可以理解为后面的文字是否换行），默认 false</p>
-<h3 id="3-6-按钮"><a href="#3-6-按钮" class="headerlink" title="3.6 按钮"></a>3.6 按钮</h3><p>你可以在 markdown 中加入如下的代码来使用 Button：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% btn url, text, title %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>url：跳转链接<br>text：显示的文字<br>title：鼠标悬停时显示的文字（可选）</p>
-<h3 id="3-7-组图"><a href="#3-7-组图" class="headerlink" title="3.7 组图"></a>3.7 组图</h3><p>如果想把多张图片按一定布局组合显示，你可以在 markdown 中按如下格式：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% gi total n1-n2-... %&#125;<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>&#123;% endgi %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>total：图片总数量，对应中间包含的图片 url 数量<br>n1-n2-…：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于 total，否则按默认样式</p>
-<p>如下图为 <code>&#123;% gi 5 3-2 %&#125;</code> 示例，代表共 5 张图，第一行 3 张图，第二行 2 张图。</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153534894.png" srcset="/img/loading.gif" lazyload alt="image-20250217153534894"></p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>参考资料：<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">https://hexo.fluid-dev.com/docs/guide/</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             
@@ -378,7 +347,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  <a href="/categories/Arch/" class="category-chain-item">Arch</a>
   
   
 
@@ -393,9 +362,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="/tags/Arch/" class="print-no-link">#Arch</a>
       
-        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -407,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>基于Fluid主题搭建Hexo博客的一些常用命令</div>
-      <div>https://wxwdaydayup.top/基于Fluid主题搭建Hexo博客的一些常用命令/</div>
+      <div>Arch Linux 系统美化</div>
+      <div>https://wxwdaydayup.top/Arch Linux 系统美化/</div>
     </div>
     <div class="license-meta">
       
@@ -420,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月5日</div>
+          <div>2025年3月10日</div>
         </div>
       
       
@@ -452,9 +421,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Linux%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="Linux 操作系统基础">
+                      <a href="/Arch%20Linux%20%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E9%99%A4%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Arch Linux 常见问题排除与解决">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux 操作系统基础</span>
+                        <span class="hidden-mobile">Arch Linux 常见问题排除与解决</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -462,8 +431,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo%E5%8F%91%E7%94%9Ferror%EF%BC%9Aspawn%20failed%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo发生error：spawn failed错误的解决方法">
-                        <span class="hidden-mobile">Hexo发生error：spawn failed错误的解决方法</span>
+                      <a href="/Arch%20Linux%20%E6%88%90%E4%B8%BA%E4%B8%8D%E5%90%88%E6%A0%BC%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" title="Arch Linux 成为不合格的系统管理员">
+                        <span class="hidden-mobile">Arch Linux 成为不合格的系统管理员</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

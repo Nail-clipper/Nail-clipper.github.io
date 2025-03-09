@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302221345917.png">
 <meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png">
 <meta property="article:published_time" content="2025-03-02T12:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-07T15:13:34.243Z">
+<meta property="article:modified_time" content="2025-03-09T07:49:33.804Z">
 <meta property="article:author" content="Nail Clipper">
 <meta property="article:tag" content="Arch">
 <meta property="article:tag" content="Linux">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          3k 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          24 分钟
+          26 分钟
         
       </span>
     
@@ -282,7 +282,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-07T23:13:34+08:00
+                    本文最后更新于 2025-03-09T15:49:33+08:00
                   
                   
 
@@ -323,6 +323,12 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">dd</span> <span class="hljs-keyword">if</span>=/dev/zero of=/swapfile bs=1M count=4096 status=progress <span class="hljs-comment">#创建4G的交换空间 大小根据需要自定</span><br><span class="hljs-built_in">chmod</span> 600 /swapfile <span class="hljs-comment">#设置正确的权限</span><br>mkswap /swapfile <span class="hljs-comment">#格式化swap文件</span><br>swapon /swapfile <span class="hljs-comment">#启用swap文件</span><br></code></pre></td></tr></table></figure>
 
+<blockquote>
+<p>若你在之前将硬盘格式化为 <code>btrfs</code> 文件系统，由于 <code>btrfs</code> 不支持常规 <code>swapon</code> 操作，你需要使用 <code>btrfs</code> 专用的方法创建 swap 文件，此时应：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> /swapfile											<span class="hljs-comment">#删除你已经使用 dd 创建的 /swapfile</span><br>btrfs filesystem mkswapfile --size 4G /swapfile			<span class="hljs-comment">#使用 btrfs 专用方式创建 swap</span><br>swapon /swapfile										<span class="hljs-comment">#启用 swap</span><br>swapon --show											<span class="hljs-comment">#确认 swap 是否成功挂载</span><br>free -h													<span class="hljs-comment">#确认 swap 是否成功挂载</span><br></code></pre></td></tr></table></figure>
+
+<p>这是因为 <code>btrfs</code> 具有 COW（写时复制）特性，直接使用 <code>dd</code> 创建的 <code>/swapfile</code> 可能导致碎片化，<code>swapon</code> 也不支持 COW 文件。因此，我们必须使用 <code>btrfs filesystem mkswapfile</code> 命令，它会自动创建一个正确的、非 COW 的 swap 文件。</p>
+</blockquote>
 <p>最后，向&#x2F;etc&#x2F;fstab 中<strong>追加</strong>如下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/swapfile none swap defaults 0 0<br></code></pre></td></tr></table></figure>
 
@@ -340,7 +346,7 @@
 <p>首先检查桌面环境中的网络设置：</p>
 <p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250302222412385.png" srcset="/img/loading.gif" lazyload></p>
 <p>接下来安装一些基础功能包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S sof-firmware alsa-firmware alsa-ucm-conf                     <span class="hljs-comment">#一些可能需要的声音固件</span><br><span class="hljs-built_in">sudo</span> pacman -S ntfs-3g                                                      <span class="hljs-comment">#识别NTFS格式的硬盘</span><br><span class="hljs-built_in">sudo</span> pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   <span class="hljs-comment">#安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题</span><br><span class="hljs-built_in">sudo</span> pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra             <span class="hljs-comment">#安装谷歌开源字体及表情</span><br><span class="hljs-built_in">sudo</span> pacman -S firefox chromium                                             <span class="hljs-comment">#安装常用的火狐、谷歌浏览器</span><br><span class="hljs-built_in">sudo</span> pacman -S ark                                                          <span class="hljs-comment">#与dolphin同用右键解压</span><br><span class="hljs-built_in">sudo</span> pacman -S p7zip unrar unarchiver lzop lrzip                            <span class="hljs-comment">#安装ark可选依赖</span><br><span class="hljs-built_in">sudo</span> pacman -S packagekit-qt5 packagekit appstream-qt appstream             <span class="hljs-comment">#确保Discover(软件中心）可用 需重启</span><br><span class="hljs-built_in">sudo</span> pacman -S gwenview                                                     <span class="hljs-comment">#图片查看器</span><br><span class="hljs-built_in">sudo</span> pacman -S git wget kate <span class="hljs-built_in">bind</span>                                           <span class="hljs-comment">#一些工具</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S sof-firmware alsa-firmware alsa-ucm-conf                     <span class="hljs-comment">#一些可能需要的声音固件</span><br><span class="hljs-built_in">sudo</span> pacman -S ntfs-3g                                                      <span class="hljs-comment">#识别NTFS格式的硬盘</span><br><span class="hljs-built_in">sudo</span> pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   <span class="hljs-comment">#安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题</span><br><span class="hljs-built_in">sudo</span> pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra             <span class="hljs-comment">#安装谷歌开源字体及表情</span><br><span class="hljs-built_in">sudo</span> pacman -S firefox chromium                                             <span class="hljs-comment">#安装常用的火狐（有Bug）、谷歌浏览器</span><br><span class="hljs-built_in">sudo</span> pacman -S ark                                                          <span class="hljs-comment">#与dolphin同用右键解压</span><br><span class="hljs-built_in">sudo</span> pacman -S p7zip unrar unarchiver lzop lrzip                            <span class="hljs-comment">#安装ark可选依赖</span><br><span class="hljs-built_in">sudo</span> pacman -S packagekit-qt5 packagekit appstream-qt appstream             <span class="hljs-comment">#确保Discover(软件中心）可用 需重启</span><br><span class="hljs-built_in">sudo</span> pacman -S gwenview                                                     <span class="hljs-comment">#图片查看器</span><br><span class="hljs-built_in">sudo</span> pacman -S git wget kate <span class="hljs-built_in">bind</span>                                           <span class="hljs-comment">#一些工具</span><br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>不要安装过多字体：在字体超过 255 种时，某些 QT 程序可能无法正确显示某些表情和符号</p>
@@ -375,6 +381,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">makepkg -si<br></code></pre></td></tr></table></figure>
 
 <p>按照屏幕上的说明进行操作。当系统要求你确认时，按 <code>Y</code></p>
+<blockquote>
+<p>若你在此时遇到网络问题，显示为：&#x3D;&#x3D;&gt; 错误： 在 build() 中发生一个错误。    正在放弃…</p>
+<p>我们需要打开文件夹下的 PKGBUILD 文件，找到 <code>build()</code> 函数，在其多条 export 语句下添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-function"><span class="hljs-title">build</span></span>() &#123;<br>  <span class="hljs-built_in">export</span> GOPATH=<span class="hljs-string">&quot;<span class="hljs-variable">$srcdir</span>&quot;</span>/gopath<br>  <span class="hljs-built_in">export</span> CGO_CPPFLAGS=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;CPPFLAGS&#125;</span>&quot;</span><br>  <span class="hljs-built_in">export</span> CGO_CFLAGS=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;CFLAGS&#125;</span>&quot;</span><br>  ...<br>  ...<br>  ...<br>  <span class="hljs-comment">#下面这两条是你需要添加的内容</span><br>  <span class="hljs-built_in">export</span> GO111MODULE=on<br>  <span class="hljs-built_in">export</span> GOPROXY=https://goproxy.cn<br></code></pre></td></tr></table></figure></blockquote>
 <p>该过程完成后，通过检查其版本来验证 Yay 是否已成功安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yay --version<br></code></pre></td></tr></table></figure>
 
@@ -506,6 +516,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/Arch%20Linux%20%E6%88%90%E4%B8%BA%E4%B8%8D%E5%90%88%E6%A0%BC%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" title="Arch Linux 成为不合格的系统管理员">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Arch Linux 成为不合格的系统管理员</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

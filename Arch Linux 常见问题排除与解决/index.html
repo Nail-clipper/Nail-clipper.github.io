@@ -19,27 +19,23 @@
   <meta name="author" content="Nail Clipper">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Fluid 是基于Hexo的一款Material Design风格的主题，由Fluid-dev负责开发与维护。">
+    <meta name="description" content="本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Fluid主题搭建Hexo博客的一些常用命令">
-<meta property="og:url" content="https://wxwdaydayup.top/%E5%9F%BA%E4%BA%8EFluid%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="Arch Linux 常见问题排除与解决">
+<meta property="og:url" content="https://wxwdaydayup.top/Arch%20Linux%20%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E9%99%A4%E4%B8%8E%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="Ciallo～(∠・ω&lt; )⌒★">
-<meta property="og:description" content="Fluid 是基于Hexo的一款Material Design风格的主题，由Fluid-dev负责开发与维护。">
+<meta property="og:description" content="本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217152817426.png">
-<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153049230.png">
-<meta property="og:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153534894.png">
-<meta property="article:published_time" content="2025-02-05T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-02T15:42:58.515Z">
+<meta property="article:published_time" content="2025-03-11T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-09T09:23:07.182Z">
 <meta property="article:author" content="Nail Clipper">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="Arch">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217152817426.png">
   
   
   
-  <title>基于Fluid主题搭建Hexo博客的一些常用命令 - Ciallo～(∠・ω&lt; )⌒★</title>
+  <title>Arch Linux 常见问题排除与解决 - Ciallo～(∠・ω&lt; )⌒★</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="基于Fluid主题搭建Hexo博客的一些常用命令"></span>
+            <span id="subtitle" data-typed-text="Arch Linux 常见问题排除与解决"></span>
           
         </div>
 
@@ -217,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-05 10:00" pubdate>
-          2025年2月5日 上午
+        <time datetime="2025-03-11 10:00" pubdate>
+          2025年3月11日 上午
         </time>
       </span>
     
@@ -229,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          709 字
+          1.5k 字
         
       </span>
     
@@ -240,7 +236,7 @@
         
         
         
-          6 分钟
+          13 分钟
         
       </span>
     
@@ -277,12 +273,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">基于Fluid主题搭建Hexo博客的一些常用命令</h1>
+            <h1 id="seo-header">Arch Linux 常见问题排除与解决</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-02T23:42:58+08:00
+                    本文最后更新于 2025-03-09T17:23:07+08:00
                   
                   
 
@@ -292,75 +288,55 @@
             
               <div class="markdown-body">
                 
-                <h2 id="1、安装主题"><a href="#1、安装主题" class="headerlink" title="1、安装主题"></a>1、安装主题</h2><h3 id="1-1-获取最新版本"><a href="#1-1-获取最新版本" class="headerlink" title="1.1 获取最新版本"></a>1.1 获取最新版本</h3><p>Hexo 5.0.0 版本以上，通过 npm 直接安装，进入博客目录执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
+                <p>本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。</p>
+<h2 id="01-使用-BIOS-GPT-模式安装-Arch-Linux"><a href="#01-使用-BIOS-GPT-模式安装-Arch-Linux" class="headerlink" title="01. 使用 BIOS+GPT 模式安装 Arch Linux"></a>01. 使用 BIOS+GPT 模式安装 Arch Linux</h2><p>虽然使用传统 BIOS 模式安装的场景已经越来越少，但是在某些特殊场景，如在 VPS 上安装 Arch Linux,可能依然需要使用到 BIOS 模式。本小节讲述在使用 BIOS+GPT 模式安装时，与 UEFI+GPT 模式安装的不同点，其中绝大多数步骤是相同的。</p>
+<ul>
+<li>安装前，在主板的 BIOS 设置中，或在 VPS 的启动设置中(如有)，将启动模式调整为传统 BIOS 模式启动。</li>
+<li>在分区时，需要额外分出一个 2M 大小的 BIOS boot 模式的分区，此分区无需进行格式化与挂载。</li>
+<li>在安装引导程序时，对应的命令修改为: <code>grub-install --target=i386-pc /dev/vda</code> 以及 <code>grub-mkconfig -o /boot/grub/grub.cfg</code>。其中，第一条命令中的<code>/dev/vda</code>为安装 GRUB 的磁盘，而非分区。具体的名字根据安装者的实际情况进行更改。</li>
+</ul>
+<h2 id="02-静态-IP-设置"><a href="#02-静态-IP-设置" class="headerlink" title="02. 静态 IP 设置"></a>02. 静态 IP 设置</h2><p>虽然使用可以自动获取 ip 地址的工具可以覆盖绝大多数场景，但是仍有部分特殊场景，如校园网，VPS 等环境下需要进行静态 IP 的设置。本小节给出一个简略的设置静态 IP 的方式。如需要设置静态 IP,需要首先禁用 dhcpcd 或 NetworkManager 等自动获取 ip 的工具。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl stop dhcpcd NetworkManager<br><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">disable</span> dhcpcd NetworkManager<br></code></pre></td></tr></table></figure>
 
-<p>然后在博客目录下创建 <code>_config.fluid.yml</code>，将主题的 <code>config.yml </code> 内容复制过去。</p>
-<h3 id="1-2-指定主题"><a href="#1-2-指定主题" class="headerlink" title="1.2 指定主题"></a>1.2 指定主题</h3><p>修改 Hexo 博客目录中的 <code>_config.yml</code>：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  <span class="hljs-comment"># 指定主题</span><br><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></td></tr></table></figure>
+<p>接下来启用 systemd-networkd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> --now systemd-networkd<br></code></pre></td></tr></table></figure>
 
-<h3 id="1-3-创建关于页"><a href="#1-3-创建关于页" class="headerlink" title="1.3 创建关于页"></a>1.3 创建关于页</h3><p>首次使用主题的「关于页」需要手动创建：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new page about<br></code></pre></td></tr></table></figure>
+<p>使用<code>ip ad</code>命令查看当前网卡的名字，如这里使用名字 ens3。随后创建配置文件<code>/etc/systemd/network/10-static-ens3.network</code>。接下来在其中填入内容。其中的 ip 地址和网关需要从你的网络提供商处获取。其中的 DNS 设置同样需要在<code>/etc/resolv.conf</code>中按照前文中的方式进行设置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">[Match]<br>Name=ens3<br><br>[Network]<br>Address=YOUR_IPV4_ADDRESS/MASK<br>Gateway=YOUR_IPV4_GATEWAY<br>DNS=8.8.8.8<br><br>[Network]<br>Address=YOUR_IPV6_ADDRESS/MASK<br>Gateway=YOUR_IPV6_GATEWAY<br>DNS=2001:4860:4860::8888<br></code></pre></td></tr></table></figure>
 
-<p>创建成功后修改 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。</p>
-<p>修改后的文件示例如下：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 标题<br><span class="hljs-section">layout: about</span><br><span class="hljs-section">---</span><br><br>这里写关于页的正文，支持 Markdown, HTML<br></code></pre></td></tr></table></figure>
+<p>最后，重启服务即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart systemd-networkd<br></code></pre></td></tr></table></figure>
 
-<div class="note note-warning">
-            <p>WARNING</p><p><code>layout: about</code> 必须存在，并且不能修改成其他值，否则不会显示头像等样式。</p>
-          </div>
+<h2 id="03-鼠标出现按键不灵敏或失灵的现象"><a href="#03-鼠标出现按键不灵敏或失灵的现象" class="headerlink" title="03. 鼠标出现按键不灵敏或失灵的现象"></a>03. 鼠标出现按键不灵敏或失灵的现象</h2><p>一般来说大多数鼠标都是即插即用的，但 5.14 内核前后更新后可能遇到失灵的情况。根据自身鼠标品牌安装对应的驱动即可解决。<a target="_blank" rel="noopener" href="https://openrazer.github.io/#arch">相关资料</a></p>
+<h2 id="04-关机时卡住很久才能关机"><a href="#04-关机时卡住很久才能关机" class="headerlink" title="04. 关机时卡住很久才能关机"></a>04. 关机时卡住很久才能关机</h2><p>一般屏幕会出现形如<code>A stop job is running for...(1m30s)</code>的信息，这是经常会遇到的关机卡住 1 分 30 秒的问题，一般来说这种情况是出现了某个进程在关机时不愿停止，需要等到超时时间到达强行停止。通用的解决办法是调整缩短这个等待时间，建议从 1 分 30 秒调整至 30 秒，30 秒已经足够几乎所有进程正常结束。</p>
+<p>编辑 <code>/etc/systemd/system.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> vim /etc/systemd/system.conf<br></code></pre></td></tr></table></figure>
 
-<h3 id="1-4-更新主题"><a href="#1-4-更新主题" class="headerlink" title="1.4 更新主题"></a>1.4 更新主题</h3><p>在博客目录下执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm update --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
+<p>找到其中<code>DefaultTimeoutStopSec</code>一项，将其前方的井号去掉，并赋值为 30s 即可。最后执行 daemon-reload 使其生效。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload<br></code></pre></td></tr></table></figure>
+
+<p>上述解决方案其实只是将这个等待时间缩小了，并没有解决实际问题。如果你想排查问题真正的原因所在，在关机时如果出现了<code>A stop job is running for...(1m30s)</code>的信息，耐心等待其结束关机，然后重新启动电脑，执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">journalctl -p5<br></code></pre></td></tr></table></figure>
+
+<p>按&#x2F;(斜杠键)搜索<code>Killing</code>关键字，找到你关机的时间附近所在的匹配行，你可以在附近看到到底是哪一个进程导致了 timeout,然后再去排查这个进程有什么问题即可。</p>
+<h2 id="05-磁盘容量不足的处理方式"><a href="#05-磁盘容量不足的处理方式" class="headerlink" title="05. 磁盘容量不足的处理方式"></a>05. 磁盘容量不足的处理方式</h2><p>一般使用 LVM 安装 Linux 系统则不用担心这种情况发生。但是我们使用的是传统的 ext4 经典分区方式。这种情况下一般建议在安装的开始就将根目录设置的大一些，如 100G。如果&#x2F;home 分区大小不够了，可以新安装一块硬盘，将其挂载到你想要的位置，再按照<code>基础安装</code>的步骤中重新 genfstab 一下就行了。</p>
+<p>除此之外，如果根目录容量不足，可以不定期清理一下 pacman 的缓存，详见<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache">archwiki</a>。太长不看的可以直接用下面这一行命令清理没有安装的所有缓存的包，和没有被使用的同步数据库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -Sc<br></code></pre></td></tr></table></figure>
+
+<h2 id="06-软件的降级"><a href="#06-软件的降级" class="headerlink" title="06. 软件的降级"></a>06. 软件的降级</h2><p>在 archlinux 上 偶尔会出现某一个包的最新版本有各种问题的情况，如某些软件过新, 而一些依赖并没有支持,比如<a target="_blank" rel="noopener" href="https://bugs.archlinux.org/task/74900">virtualbox 在 linux5.18 内核下的崩溃</a>，此时需要降级该包以正常使用。包可以是普通软件，也可以是内核。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yay -S downgrade<br></code></pre></td></tr></table></figure>
+
+<p>安装此包即可，使用方法也很简单，downgrade 后加上需要降级的包名即可，随后会提示你选择需要降级到的版本，点选即可。</p>
+<h2 id="07-升级系统时出现形如-unable-to-lock-database-的错误"><a href="#07-升级系统时出现形如-unable-to-lock-database-的错误" class="headerlink" title="07. 升级系统时出现形如 unable to lock database 的错误"></a>07. 升级系统时出现形如 unable to lock database 的错误</h2><p>可能存在升级系统时异常关机或程序异常退出的情况，或者多个 pacman 的相关程序在同时执行。移除 pacman 的 db 锁即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">rm</span> /var/lib/pacman/db.lck<br></code></pre></td></tr></table></figure>
+
+<h2 id="08-手动开关混成器"><a href="#08-手动开关混成器" class="headerlink" title="08. 手动开关混成器"></a>08. 手动开关混成器</h2><p>有时混成器会因为某些原因需要手动开启或关闭，但是目前在 KDE 下混成器在设置里无法在不关机的情况下直接关闭，下面命令提供手动开关混成器的效果。<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/597736/disabling-kwin-compositor-from-command-line">相关资料</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">qdbus org.kde.KWin /Compositor <span class="hljs-built_in">suspend</span>  <span class="hljs-comment">#禁用</span><br><br>qdbus org.kde.KWin /Compositor resume   <span class="hljs-comment">#开启</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="09-屏幕溢出：overscan"><a href="#09-屏幕溢出：overscan" class="headerlink" title="09. 屏幕溢出：overscan"></a>09. 屏幕溢出：overscan</h2><p>在连接一些老式的显示设备时，可能与出现<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Overscan">overscan</a>的现象，简单来说就是电视屏幕四圈会有一圈溢出了，不显示出来。对于英特尔核芯显卡，可以选择 intel panel fitter 的方式[<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/508358/overscanning-picture-problem-using-hdmi-with-intel-graphics">1]</a>。最后就是要加入到一个 service 里开机自动启动，并且是在 DE 加载完成后执行[<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/397853/how-to-set-a-systemd-unit-to-start-after-loading-the-desktop">2]</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> intel_panel_fitter -p A -x 1230 -y 700<br></code></pre></td></tr></table></figure>
 
 
-
-<h2 id="2、快速开始"><a href="#2、快速开始" class="headerlink" title="2、快速开始"></a>2、快速开始</h2><h3 id="创建一篇新的文章"><a href="#创建一篇新的文章" class="headerlink" title="创建一篇新的文章"></a>创建一篇新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<h3 id="部署到远程服务器"><a href="#部署到远程服务器" class="headerlink" title="部署到远程服务器"></a>部署到远程服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="3、常用语法"><a href="#3、常用语法" class="headerlink" title="3、常用语法"></a>3、常用语法</h2><h3 id="3-1-脚注"><a href="#3-1-脚注" class="headerlink" title="3,1 脚注"></a>3,1 脚注</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">这是一句话[^1]<br>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">这是对应的脚注</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-2-便签"><a href="#3-2-便签" class="headerlink" title="3.2 便签"></a>3.2 便签</h3><p>在 markdown 中加入如下的代码来使用便签：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>可选便签：</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217152817426.png" srcset="/img/loading.gif" lazyload alt="可选便签"></p>
-<div class="note note-warning">
-            <p>WARNING</p><p>使用时 <code>&lt;div class=&quot;note note-primary&quot;&gt;             &lt;p&gt;&lt;code&gt;和&lt;/code&gt;&lt;/p&gt;           &lt;/div&gt;</code> 需单独一行，否则会出现问题</p>
-          </div>
-
-<h3 id="3-3-行内标签"><a href="#3-3-行内标签" class="headerlink" title="3.3 行内标签"></a>3.3 行内标签</h3><p>在 markdown 中加入如下的代码来使用 Label：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% label primary @text %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>可选 Label：</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153049230.png" srcset="/img/loading.gif" lazyload alt="可选Label"></p>
-<h3 id="3-4-折叠块"><a href="#3-4-折叠块" class="headerlink" title="3.4 折叠块"></a>3.4 折叠块</h3><p>使用折叠块，可以折叠代码、图片、文字等任何内容，可以在 markdown 中按如下格式：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% fold info @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>info: 和行内标签类似的可选参数 title: 折叠块上的标题</p>
-<h3 id="3-5-勾选框"><a href="#3-5-勾选框" class="headerlink" title="3.5 勾选框"></a>3.5 勾选框</h3><p>在 markdown 中加入如下的代码来使用 Checkbox：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>text：显示的文字<br>checked：默认是否已勾选，默认 false<br>incline: 是否内联（可以理解为后面的文字是否换行），默认 false</p>
-<h3 id="3-6-按钮"><a href="#3-6-按钮" class="headerlink" title="3.6 按钮"></a>3.6 按钮</h3><p>你可以在 markdown 中加入如下的代码来使用 Button：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% btn url, text, title %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>url：跳转链接<br>text：显示的文字<br>title：鼠标悬停时显示的文字（可选）</p>
-<h3 id="3-7-组图"><a href="#3-7-组图" class="headerlink" title="3.7 组图"></a>3.7 组图</h3><p>如果想把多张图片按一定布局组合显示，你可以在 markdown 中按如下格式：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% gi total n1-n2-... %&#125;<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>&#123;% endgi %&#125;<br></code></pre></td></tr></table></figure>
-
-<p>total：图片总数量，对应中间包含的图片 url 数量<br>n1-n2-…：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于 total，否则按默认样式</p>
-<p>如下图为 <code>&#123;% gi 5 3-2 %&#125;</code> 示例，代表共 5 张图，第一行 3 张图，第二行 2 张图。</p>
-<p><img src="https://nail-clipper.oss-cn-beijing.aliyuncs.com/img/image-20250217153534894.png" srcset="/img/loading.gif" lazyload alt="image-20250217153534894"></p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>参考资料：<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">https://hexo.fluid-dev.com/docs/guide/</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             
@@ -378,7 +354,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  <a href="/categories/Arch/" class="category-chain-item">Arch</a>
   
   
 
@@ -393,9 +369,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="/tags/Arch/" class="print-no-link">#Arch</a>
       
-        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -407,8 +383,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>基于Fluid主题搭建Hexo博客的一些常用命令</div>
-      <div>https://wxwdaydayup.top/基于Fluid主题搭建Hexo博客的一些常用命令/</div>
+      <div>Arch Linux 常见问题排除与解决</div>
+      <div>https://wxwdaydayup.top/Arch Linux 常见问题排除与解决/</div>
     </div>
     <div class="license-meta">
       
@@ -420,7 +396,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月5日</div>
+          <div>2025年3月11日</div>
         </div>
       
       
@@ -452,9 +428,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Linux%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="Linux 操作系统基础">
+                      <a href="/%E7%BB%99%E6%96%B0%E6%89%8B%E7%9A%84%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E4%B8%8D%E5%8E%BB%E5%BC%84%E5%9D%8F%20Arch%20Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BB%BA%E8%AE%AE/" title="给新手的关于如何不去弄坏 Arch Linux 系统的建议">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux 操作系统基础</span>
+                        <span class="hidden-mobile">给新手的关于如何不去弄坏 Arch Linux 系统的建议</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -462,8 +438,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo%E5%8F%91%E7%94%9Ferror%EF%BC%9Aspawn%20failed%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="Hexo发生error：spawn failed错误的解决方法">
-                        <span class="hidden-mobile">Hexo发生error：spawn failed错误的解决方法</span>
+                      <a href="/Arch%20Linux%20%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96/" title="Arch Linux 系统美化">
+                        <span class="hidden-mobile">Arch Linux 系统美化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
