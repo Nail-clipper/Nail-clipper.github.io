@@ -19,15 +19,15 @@
   <meta name="author" content="Nail Clipper">
   <meta name="keywords" content="">
   
-    <meta name="description" content="建议使用 Ubuntu 或者 Arch Linux。即使命令行在各个 Linux 发行版上基本通用，但是本书还是会针对 Arch Linux 添加更多内容，建议有能力的同学尽量使用 Arch Linux。">
+    <meta name="description" content="建议使用 Ubuntu 或者 Arch Linux。即使命令行在各个 Linux 发行版上基本通用，但是本文还是会针对 Arch Linux 添加更多内容，建议有能力的同学尽量使用 Arch Linux。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 系统操作进阶（知其所以然）">
 <meta property="og:url" content="https://wxwdaydayup.top/Linux%20%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E8%BF%9B%E9%98%B6%EF%BC%88%E7%9F%A5%E5%85%B6%E6%89%80%E4%BB%A5%E7%84%B6%EF%BC%89/index.html">
 <meta property="og:site_name" content="Ciallo～(∠・ω&lt; )⌒★">
-<meta property="og:description" content="建议使用 Ubuntu 或者 Arch Linux。即使命令行在各个 Linux 发行版上基本通用，但是本书还是会针对 Arch Linux 添加更多内容，建议有能力的同学尽量使用 Arch Linux。">
+<meta property="og:description" content="建议使用 Ubuntu 或者 Arch Linux。即使命令行在各个 Linux 发行版上基本通用，但是本文还是会针对 Arch Linux 添加更多内容，建议有能力的同学尽量使用 Arch Linux。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-13T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-13T09:47:43.562Z">
+<meta property="article:modified_time" content="2025-03-13T10:04:11.349Z">
 <meta property="article:author" content="Nail Clipper">
 <meta property="article:tag" content="Arch">
 <meta property="article:tag" content="Linux">
@@ -278,7 +278,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-13T17:47:43+08:00
+                    本文最后更新于 2025-03-13T18:04:11+08:00
                   
                   
 
@@ -288,7 +288,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="文件（夹）管理"><a href="#文件（夹）管理" class="headerlink" title="文件（夹）管理"></a>文件（夹）管理</h1><p>本书学习的第一步，就是要找到 Linux 终端的所在位置。目前较常见的图形化终端有 Konsole、Gnome terminal、xterm 等几种。一般安装后在各个发行版的菜单中搜索即可找到。Gnome terminal 和 Konsole 基本是当前各大流行 Linux 发行版预装最多的终端应用，功能也非常强大好用。而 xterm 是世界上第一款图形化终端软件，xterm 软件包在 X Window 出现之前就有了。其对于老式哑终端的模仿非常到位，可以仿真各类老式哑终端的色彩等行为。所谓的哑终端就是传统的利用通信电缆（一般是一条多线束的串行电缆）连接到 Unix 系统上的一台显示器和一个键盘。关于各个图形化终端的各类配置，同学们可以自行慢慢摸索。</p>
+                <h1 id="文件（夹）管理"><a href="#文件（夹）管理" class="headerlink" title="文件（夹）管理"></a>文件（夹）管理</h1><p>本文学习的第一步，就是要找到 Linux 终端的所在位置。目前较常见的图形化终端有 Konsole、Gnome terminal、xterm 等几种。一般安装后在各个发行版的菜单中搜索即可找到。Gnome terminal 和 Konsole 基本是当前各大流行 Linux 发行版预装最多的终端应用，功能也非常强大好用。而 xterm 是世界上第一款图形化终端软件，xterm 软件包在 X Window 出现之前就有了。其对于老式哑终端的模仿非常到位，可以仿真各类老式哑终端的色彩等行为。所谓的哑终端就是传统的利用通信电缆（一般是一条多线束的串行电缆）连接到 Unix 系统上的一台显示器和一个键盘。关于各个图形化终端的各类配置，同学们可以自行慢慢摸索。</p>
 <p>除了上述的图形化终端，在 Linux 出现的早期，没有图形化界面可供操作，当时通常的方式是使用一个简单的哑终端操作 Unix 系统。当今 2021 年，这种连接方式基本早已不存在了，但是你仍然可以模拟此种连接方式。Linux 系统启动后，它会自动创建出一些虚拟控制台。虚拟控制台是运行在 Linux 系统内存中的终端会话。通过按键组合<code>ctrl + alt + (F1~F7)</code>，可以分别切换到多个不同的虚拟控制台。这种模式称作 Linux 控制台，它仿真了早期的硬接线控制台终端，而且是一种同 Linux 系统交互的直接接口。虚拟控制台一般也被称为 tty。tty 代表电传打字机（teletypewriter）。这是一个古老的名词，指的是一台用于发送消息的机器。</p>
 <p>在开始使用 tty 后，你可以看到首先会让你输入要登录的用户名，输入用户名回车后会提示输入密码，需要注意的是，密码的输入是不会显示在屏幕上的，盲输完回车即可完成登录，屏幕不显示密码是正常的，不要以为自己的键盘坏了。</p>
 <h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><p>在启动图形化终端后，你首先会看到一个待输入的命令提示符，类似 windows 系统中的 cmd。一般如下所示，显示了当前用户 ID 名 testuser，系统名为 archlinux。<code>~</code>这个波浪线代表你正处于 testuser 这个用户的个人目录下，路径为<code>/home/testuser</code>。<code>$</code>代表当前是已一个普通用户登陆，若为<code>#</code>则表示是以 root 帐户登陆。</p>
@@ -721,7 +721,7 @@
 <p>最后给出一个综合的例子：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">du</span> -s * | <span class="hljs-built_in">sort</span> -nr<br>4649672 Android<br>2726928 Desktop<br>2224812 Documents<br>1139980 Games<br>47172   Downloads<br>29072   Pictures<br>560     ThunderNetwork<br>8       Music<br>4       下载<br>4       Videos<br></code></pre></td></tr></table></figure>
 
-<p>注意，-r 参数将结果按降序输出，这样就更容易看到目录下的哪些文件占用空间最多。本例中用到的管道命令（|）将 du 命令的输出重定向到 sort 命令。我们将在本书后面进一步讨论。</p>
+<p>注意，-r 参数将结果按降序输出，这样就更容易看到目录下的哪些文件占用空间最多。本例中用到的管道命令（|）将 du 命令的输出重定向到 sort 命令。我们将在本文后面进一步讨论。</p>
 <h3 id="grep-搜索"><a href="#grep-搜索" class="headerlink" title="grep 搜索"></a>grep 搜索</h3><p>你会经常需要在大文件中找一行数据，而这行数据又埋藏在文件的中间。这时并不需要手动翻看整个文件，用 grep 命令来帮助查找就行了。grep 命令的命令行格式如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grep [options] pattern [file]<br></code></pre></td></tr></table></figure>
 
@@ -768,7 +768,7 @@
 <h3 id="upower-电池信息"><a href="#upower-电池信息" class="headerlink" title="upower 电池信息"></a>upower 电池信息</h3><p>upower 可以查看电池相关信息，使用如下命令获取详情。可以看到电池损耗，充电比率等实用信息：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ upower -i `upower -e | grep <span class="hljs-string">&#x27;BAT&#x27;</span>`<br></code></pre></td></tr></table></figure>
 
-<h1 id="理解-Shell-父子关系、内建命令"><a href="#理解-Shell-父子关系、内建命令" class="headerlink" title="理解 Shell 父子关系、内建命令"></a>理解 Shell 父子关系、内建命令</h1><h2 id="shell-的父子关系"><a href="#shell-的父子关系" class="headerlink" title="shell 的父子关系"></a>shell 的父子关系</h2><p>用于登录的某个虚拟控制器终端，或在 GUI 中运行终端仿真器时所启动的默认的交互 shell，是一个父 shell。本书到目前为止都是父 shell 提供 CLI 提示符，然后等待命令输入。</p>
+<h1 id="理解-Shell-父子关系、内建命令"><a href="#理解-Shell-父子关系、内建命令" class="headerlink" title="理解 Shell 父子关系、内建命令"></a>理解 Shell 父子关系、内建命令</h1><h2 id="shell-的父子关系"><a href="#shell-的父子关系" class="headerlink" title="shell 的父子关系"></a>shell 的父子关系</h2><p>用于登录的某个虚拟控制器终端，或在 GUI 中运行终端仿真器时所启动的默认的交互 shell，是一个父 shell。本文到目前为止都是父 shell 提供 CLI 提示符，然后等待命令输入。</p>
 <h3 id="查看父子结构"><a href="#查看父子结构" class="headerlink" title="查看父子结构"></a>查看父子结构</h3><p>在 CLI 提示符后输入&#x2F;bin&#x2F;bash 命令或其他等效的 bash 命令时，会创建一个新的 shell 程序。这个 shell 程序被称为子 shell（child shell）。子 shell 也拥有 CLI 提示符，同样会等待命令输入。当输入 bash、生成子 shell 的时候，你是看不到任何相关的信息的，因此需要另一条命令帮助我们理清这一切。在之前讲过的 ps 命令能够派上用场，在生成子 shell 的前后配合选项-f 来观察不同。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ ps -f<br>UID        PID  PPID  C STIME TTY          TIME CMD<br>501       1841  1840  0 11:50 pts/0    00:00:00 -bash<br>501       2429  1841  4 13:44 pts/0    00:00:00 ps -f<br>$<br>$ bash<br>$ ps -f<br>UID        PID  PPID  C STIME TTY          TIME CMD<br>501       1841  1840  0 11:50 pts/0    00:00:00 -bash<br>501       2430  1841  0 13:44 pts/0    00:00:00 bash<br>501       2444  2430  1 13:44 pts/0    00:00:00 ps -f<br>$<br></code></pre></td></tr></table></figure>
 
@@ -940,7 +940,7 @@
 </blockquote>
 <p>在处理全局环境变量时，事情就有点棘手了。如果你是在子进程中删除了一个全局环境变量，这只对子进程有效。该全局环境变量在父进程中依然可用。和修改变量一样，在子 shell 中删除全局变量后，你无法将效果反映到父 shell 中。</p>
 <h2 id="默认的环境变量"><a href="#默认的环境变量" class="headerlink" title="默认的环境变量"></a>默认的环境变量</h2><p>默认情况下，bash shell 会用一些特定的环境变量来定义系统环境。这些变量在你的 Linux 系统上都已经设置好了，只管放心使用。bash shell 源自当初的 Unix Bourne shell，因此也保留了 Unix Bourne shell 里定义的那些环境变量。除了默认的 Bourne 的环境变量，bash shell 还提供一些自有的变量。你可能已经注意到，不是所有的默认环境变量都会在运行 set 命令时列出。尽管这些都是默认环境变量，但并不是每一个都必须有一个值。</p>
-<p>其中最重要的一个环境变量为 PATH。当你在 shell 命令行界面中输入一个外部命令时，shell 必须搜索系统来找到对应的程序。PATH 环境变量定义了用于进行命令和程序查找的目录。在本书所用的 Arch Linux 系统中，PATH 环境变量的内容是这样的：</p>
+<p>其中最重要的一个环境变量为 PATH。当你在 shell 命令行界面中输入一个外部命令时，shell 必须搜索系统来找到对应的程序。PATH 环境变量定义了用于进行命令和程序查找的目录。在本文所用的 Arch Linux 系统中，PATH 环境变量的内容是这样的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span><br>/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl<br></code></pre></td></tr></table></figure>
 
 <p>输出中显示了多个可供 shell 用来查找命令和程序的目录。PATH 中的目录使用冒号分隔。如果命令或者程序的位置没有包括在 PATH 变量中，那么如果不使用绝对路径的话，shell 是没法找到的。如果 shell 找不到指定的命令或程序，它会产生一个经典的错误信息：<code>command not found</code>。</p>
@@ -979,7 +979,7 @@
 <li>&#x2F;etc&#x2F;profile 文件</li>
 </ol>
 <p>&#x2F;etc&#x2F;profile 文件是 bash shell 默认的的主启动文件。只要你登录了 Linux 系统，bash 就会执行&#x2F;etc&#x2F;profile 启动文件中的命令。不同的 Linux 发行版在这个文件里放了不同的命令。每个发行版的&#x2F;etc&#x2F;profile 文件都有不同的设置和命令。例如，在 Arch Linux 的&#x2F;etc&#x2F;profile 文件中，涉及了一个叫作&#x2F;etc&#x2F;bash.bashrc 的文件。这个文件包含了系统环境变量等其他内容。但是，&#x2F;etc&#x2F;profile 各个发行版有所不同，在 CentOS 发行版的&#x2F;etc&#x2F;profile 文件中，并没有出现这个文件。</p>
-<p>许多发行版的&#x2F;etc&#x2F;profile 文件都用到了同一个特性：for 语句。它用来迭代&#x2F;etc&#x2F;profile.d 目录下的所有文件（该语句会在后续章节详述）。这为 Linux 系统提供了一个放置特定应用程序启动文件的地方，当用户登录时，shell 会执行这些文件。在本书所用的 Arch Linux 系统中，&#x2F;etc&#x2F;profile.d 目录下包含以下文件：</p>
+<p>许多发行版的&#x2F;etc&#x2F;profile 文件都用到了同一个特性：for 语句。它用来迭代&#x2F;etc&#x2F;profile.d 目录下的所有文件（该语句会在后续章节详述）。这为 Linux 系统提供了一个放置特定应用程序启动文件的地方，当用户登录时，shell 会执行这些文件。在本文所用的 Arch Linux 系统中，&#x2F;etc&#x2F;profile.d 目录下包含以下文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">ls</span> -l /etc/profile.d<br>总用量 36<br>-rw-r--r-- 1 root root  545 Oct 20 17:10 freetype2.sh<br>-rw-r--r-- 1 root root 1107 Apr 15  2020 gawk.csh<br>-rw-r--r-- 1 root root  757 Apr 15  2020 gawk.sh<br>-rwxr-xr-x 1 root root  105 Sep 25 21:52 gpm.sh<br>-rw-r--r-- 1 root root  766 Sep  3 06:30 locale.sh<br>-rw-r--r-- 1 root root  468 Sep 18 05:12 perlbin.csh<br>-rw-r--r-- 1 root root  464 Sep 18 05:12 perlbin.sh<br></code></pre></td></tr></table></figure>
 
 <p>不难发现，有些文件与系统中的特定应用有关。大部分应用都会创建两个启动文件：一个供 bash shell 使用（使用.sh 扩展名），一个供 c shell 使用（使用.csh 扩展名）。locale.sh 文件会尝试去判定系统上所采用的默认语言字符集，然后设置对应的 LANG 环境变量。</p>
@@ -1009,7 +1009,7 @@
 <p>.bash_profile 启动文件会先去检查 HOME 目录中是不是还有一个叫.bashrc 的启动文件。如果有的话，会先执行启动文件里面的命令。</p>
 <h3 id="交互式-shell-进程"><a href="#交互式-shell-进程" class="headerlink" title="交互式 shell 进程"></a>交互式 shell 进程</h3><p>如果你的 bash shell 不是登录系统时启动的（比如是在命令行提示符下敲入 bash 时启动），那么你启动的 shell 叫作<code>交互式</code> shell。交互式 shell 不会像登录 shell 一样运行，但它依然提供了命令行提示符来输入命令。</p>
 <p>如果 bash 是作为交互式 shell 启动的，它就不会访问&#x2F;etc&#x2F;profile 文件，只会检查用户 HOME 目录中的.bashrc 文件。</p>
-<p>在本书所用的 Arch Linux 系统上，这个文件看起来如下：</p>
+<p>在本文所用的 Arch Linux 系统上，这个文件看起来如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cat</span> .bashrc<br><span class="hljs-comment">#</span><br><span class="hljs-comment"># ~/.bashrc</span><br><span class="hljs-comment">#</span><br><br><span class="hljs-comment"># If not running interactively, don&#x27;t do anything</span><br>[[ $- != *i* ]] &amp;&amp; <span class="hljs-built_in">return</span><br><br><span class="hljs-built_in">alias</span> <span class="hljs-built_in">ls</span>=<span class="hljs-string">&#x27;ls --color=auto&#x27;</span><br>PS1=<span class="hljs-string">&#x27;[\u@\h \W]\$&#x27;</span><br></code></pre></td></tr></table></figure>
 
 <p>.bashrc 文件有两个作用：一是查看并执行&#x2F;etc 目录下通用的 bashrc 文件(&#x2F;etc&#x2F;bashrc)，在 Arch Linux 上无此表现，但是在 Centos 上是存在的。二是为用户提供一个定制自己的命令别名和私有脚本函数（将在后文讲到）的地方。</p>
@@ -1021,7 +1021,7 @@
 <p>脚本能以不同的方式执行。只有其中的某一些方式能够启动子 shell。你会在后续学习到 shell 不同的执行方式。</p>
 </blockquote>
 <p>为了处理这种情况，bash shell 提供了 BASH_ENV 环境变量。当 shell 启动一个非交互式 shell 进程时，它会检查这个环境变量来查看要执行的启动文件。如果有指定的文件，shell 会执行该文件里的命令，这通常包括 shell 脚本变量设置。</p>
-<p>在本书所用的 Arch Linux 发行版中，变量 BASH_ENV 没有被设置。记住，如果变量未设置，echo 命令会显示一个空行，然后返回 CLI 提示符：</p>
+<p>在本文所用的 Arch Linux 发行版中，变量 BASH_ENV 没有被设置。记住，如果变量未设置，echo 命令会显示一个空行，然后返回 CLI 提示符：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">printenv</span> BASH_ENV<br><br>$<br></code></pre></td></tr></table></figure>
 
 <p>那如果 BASH_ENV 变量没有设置，shell 脚本到哪里去获得它们的环境变量呢？别忘了有些 shell 脚本是通过启动一个子 shell 来执行的。子 shell 可以继承父 shell 导出过的变量。</p>
@@ -1732,6 +1732,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/Shell%20%E7%BC%96%E7%A8%8B%E8%BF%9B%E9%98%B6%EF%BC%88%E7%9F%A5%E5%85%B6%E6%89%80%E4%BB%A5%E7%84%B6%EF%BC%89/" title="Shell 编程进阶（知其所以然）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Shell 编程进阶（知其所以然）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
