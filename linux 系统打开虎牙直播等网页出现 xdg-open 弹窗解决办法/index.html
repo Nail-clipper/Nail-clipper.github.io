@@ -19,23 +19,23 @@
   <meta name="author" content="Nail Clipper">
   <meta name="keywords" content="">
   
-    <meta name="description" content="zsh 是日常开发过程中最常用的 shell，它大幅提升了开发效率，也不再为忘记命令而苦恼。配合使用 oh-my-zsh 在短时间内就可以配置出一个高效的命令行，推荐大家使用。">
+    <meta name="description" content="在 Arch Linux 使用 Google Chrome 访问虎牙直播的某些直播间时，Chrome 会尝试调用 xdg-open 来打开 kiwi:&#x2F;&#x2F;domcontentloaded 这样的 URL，导致一连串弹窗报错。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arch Linux 命令行美化">
-<meta property="og:url" content="https://wxwdaydayup.top/Arch%20Linux%20%20konsole%20%E7%BE%8E%E5%8C%96/index.html">
+<meta property="og:title" content="linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法">
+<meta property="og:url" content="https://wxwdaydayup.top/linux%20%E7%B3%BB%E7%BB%9F%E6%89%93%E5%BC%80%E8%99%8E%E7%89%99%E7%9B%B4%E6%92%AD%E7%AD%89%E7%BD%91%E9%A1%B5%E5%87%BA%E7%8E%B0%20xdg-open%20%E5%BC%B9%E7%AA%97%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/index.html">
 <meta property="og:site_name" content="Ciallo～(∠・ω&lt; )⌒★">
-<meta property="og:description" content="zsh 是日常开发过程中最常用的 shell，它大幅提升了开发效率，也不再为忘记命令而苦恼。配合使用 oh-my-zsh 在短时间内就可以配置出一个高效的命令行，推荐大家使用。">
+<meta property="og:description" content="在 Arch Linux 使用 Google Chrome 访问虎牙直播的某些直播间时，Chrome 会尝试调用 xdg-open 来打开 kiwi:&#x2F;&#x2F;domcontentloaded 这样的 URL，导致一连串弹窗报错。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-21T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-21T08:14:49.084Z">
+<meta property="article:published_time" content="2025-03-21T12:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-21T08:32:05.103Z">
 <meta property="article:author" content="Nail Clipper">
 <meta property="article:tag" content="Arch">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="疑难杂症">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Arch Linux 命令行美化 - Ciallo～(∠・ω&lt; )⌒★</title>
+  <title>linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法 - Ciallo～(∠・ω&lt; )⌒★</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Arch Linux 命令行美化"></span>
+            <span id="subtitle" data-typed-text="linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法"></span>
           
         </div>
 
@@ -213,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-21 10:00" pubdate>
-          2025年3月21日 上午
+        <time datetime="2025-03-21 20:00" pubdate>
+          2025年3月21日 晚上
         </time>
       </span>
     
@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          945 字
+          653 字
         
       </span>
     
@@ -236,7 +236,7 @@
         
         
         
-          8 分钟
+          6 分钟
         
       </span>
     
@@ -273,12 +273,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Arch Linux 命令行美化</h1>
+            <h1 id="seo-header">linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-03-21T16:14:49+08:00
+                    本文最后更新于 2025-03-21T16:32:05+08:00
                   
                   
 
@@ -288,63 +288,52 @@
             
               <div class="markdown-body">
                 
-                <p>zsh 是一个兼容 bash 的 shell，相较 bash 具有以下优点：</p>
+                <h2 id="01-xdg-open-是什么？"><a href="#01-xdg-open-是什么？" class="headerlink" title="01. xdg-open 是什么？"></a>01. <code>xdg-open</code> 是什么？</h2><p><code>xdg-open</code> 是 <strong>XDG Utilities</strong> 提供的一个命令，它用于 <strong>打开 URL 或文件</strong>，并调用系统默认的应用来处理。例如：</p>
 <ul>
-<li>Tab 补全功能强大。命令、命令参数、文件路径均可以补全。</li>
-<li>插件丰富。快速输入以前使用过的命令、快速跳转文件夹、显示系统负载这些都可以通过插件实现。</li>
-<li>主题丰富。</li>
-<li>可定制性高。</li>
+<li><code>xdg-open https://www.google.com</code> 会调用默认浏览器打开网页。</li>
+<li><code>xdg-open file.pdf</code> 会调用默认的 PDF 阅读器。</li>
+<li><code>xdg-open mailto:someone@example.com</code> 会调用默认的邮件客户端。</li>
 </ul>
-<h2 id="01-安装-zsh"><a href="#01-安装-zsh" class="headerlink" title="01. 安装 zsh"></a>01. 安装 zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S zsh<br></code></pre></td></tr></table></figure>
+<p>当 Chrome 访问虎牙直播时，虎牙的网页可能会尝试使用 <code>xdg-open</code> 来打开某些自定义协议（如 <code>kiwi://</code>），但 Linux 上 <strong>没有注册 <code>kiwi://</code> 的处理程序</strong>，所以 <code>xdg-open</code> 无法正确处理，最终导致错误弹窗。</p>
+<h2 id="02-kiwi-是什么？"><a href="#02-kiwi-是什么？" class="headerlink" title="02. kiwi:// 是什么？"></a>02. <code>kiwi://</code> 是什么？</h2><p><code>kiwi://</code> 可能是虎牙直播用来处理 Web 事件的一个 <strong>自定义协议</strong>，可能用于：</p>
+<ul>
+<li>直播插件或扩展的内部通信（比如检测网页状态）。</li>
+<li>调用某个本地应用（如虎牙 PC 客户端）。</li>
+<li>触发特定的浏览器事件（如 <code>domcontentloaded</code> ）。</li>
+</ul>
+<p>在 <strong>Windows 或 macOS</strong>，虎牙可能有相应的软件可以处理 <code>kiwi://</code> 协议，但在 <strong>Linux</strong>，这个协议没有被正确注册，所以 <code>xdg-open</code> 直接报错。</p>
+<h2 id="03-Chrome-为什么调用-xdg-open？"><a href="#03-Chrome-为什么调用-xdg-open？" class="headerlink" title="03. Chrome 为什么调用 xdg-open？"></a>03. Chrome 为什么调用 <code>xdg-open</code>？</h2><p>Chrome 会调用 <code>xdg-open</code> 处理某些协议（如 <code>mailto:</code>、<code>webcal:</code>），以及一些网站定义的自定义协议。虎牙直播的 JavaScript 可能包含类似的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span> = <span class="hljs-string">&quot;kiwi://domcontentloaded&quot;</span>;<br></code></pre></td></tr></table></figure>
 
-<p>安装好后，使用 <code>cat /etc/shells</code> 查看系统可以用的 shell。</p>
-<p>使用 <code>chsh -s /bin/zsh</code> 命令将 zsh 设置为系统默认 shell。注销重新登陆，就可以开始使用 zsh 了，此时可以使用 <code>echo $SHELL</code> 查看默认 shell 是否为 zsh。</p>
-<p>第一次运行 zsh 时会进入配置引导页面：</p>
-<p>输入 <code>q</code> 会直接退出配置引导，下一次运行 zsh 时会再次进入配置引导。</p>
-<p>输入 <code>0</code>，也会退出配置引导，但是会在当前用户目录生成一个空白的文件 <code>.zshrc</code>，下一次运行时就不会再进入配置引导。下一次运行时是否再进入配置引导，取决于用户目录下是否存在.zshrc 文件。</p>
-<p>输入输入 <code>1</code> 后，就开始进行配置，由于 zsh 配置较为复杂，推荐大家使用配置管理工具来配置 zsh，花很少时间就可以得到一个称手的 zsh。下面介绍如何使用 oh-my-zsh 来修改 zsh 的主题和安装常用的插件。</p>
-<h2 id="02-安装-oh-my-zsh"><a href="#02-安装-oh-my-zsh" class="headerlink" title="02. 安装 oh-my-zsh"></a>02. 安装 oh-my-zsh</h2><p>安装 oh-my-zsh 之前，需要确保本地已经安装了 git</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -S git<br></code></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;kiwi://domcontentloaded&quot;</span>);<br></code></pre></td></tr></table></figure>
 
-<p>安装 0h-my-zsh 软件包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yay -S oh-my-zsh-git<br></code></pre></td></tr></table></figure>
-
-<p>复制 oh-my-zsh 配置文件到本地</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> /usr/share/oh-my-zsh/zshrc ~/.zshrc<br></code></pre></td></tr></table></figure>
-
-<h2 id="03-修改主题"><a href="#03-修改主题" class="headerlink" title="03. 修改主题"></a>03. 修改主题</h2><p>在 <a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">ohmyzsh 项目</a> 中查看内置的主题样式和对应的主题名。这些内置主题已经放在 <code>/usr/share/oh-my-zsh/themes</code> 目录下，不需要再下载。</p>
-<p>编辑 <code>.zshrc</code> 配置文件使用内置主题，使用<code>random</code> 值会随机选择内置主题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ vim ~/.zshrc<br>ZSH_THEME=<span class="hljs-string">&quot;random&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>除了内置主题外，还可以选择其他开源的主题，推荐使用 <code>powerlevel10k</code> 主题，项目地址为：<a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k">https://github.com/romkatv/powerlevel10k</a>   </p>
-<p>安装主题：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/share/oh-my-zsh/themes<br>git <span class="hljs-built_in">clone</span> https://github.com/romkatv/powerlevel10k.git<br></code></pre></td></tr></table></figure>
-
-<p>修改配置文件应用主题：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim ~/.zshrc<br>ZSH_THEME=<span class="hljs-string">&quot;powerlevel10k/powerlevel10k&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>安装并配置 powerlevel10k README.md 中提及的 Meslo Nerd Font 字体:</p>
-<p>直接在<a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages/ttf-meslo-nerd-font-powerlevel10k">这里</a>下载sources里面的 ttf 文件吧，目前通过<code>yay -S ttf-meslo-nerd-font-powerlevel10k</code>下载会失败，下载完成后安装字体，然后到 konsole 配置里面修改字体为 <code>MesloLGS NF</code> 。</p>
-<p>最后，执行 <code>source ~/.zshrc</code> 配置生效，这时会提示对主题进行配置，按照提示进行即可。</p>
-<h2 id="04-安装插件"><a href="#04-安装插件" class="headerlink" title="04. 安装插件"></a>04. 安装插件</h2><p>oh-my-zsh 已经内置了 git 插件，内置插件可以在 <code>/usr/share/oh-my-zsh/plugins</code> 中查看 ，下面介绍一下常用插件。</p>
-<p><strong>zsh-autocomplete：根据历史记录自动补全</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/share/oh-my-zsh/plugins<br><span class="hljs-built_in">sudo</span> git <span class="hljs-built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions.git<br>vim ~/.zshrc<br>plugins=(	git <br>			zsh-dircolors-solarized<br>			zsh-autosuggestions<br>		)<br></code></pre></td></tr></table></figure>
-
-<p><strong>zsh-syntax-highlighting：语法校验，无效命令会提示为红色</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/share/oh-my-zsh/plugins<br><span class="hljs-built_in">sudo</span> git <span class="hljs-built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git<br>vim ~/.zshrc<br>plugins=(	git <br>			zsh-dircolors-solarized<br>			zsh-autosuggestions<br>			zsh-syntax-highlighting<br>		)<br></code></pre></td></tr></table></figure>
-
-<p><strong>z：对于曾经跳转过的目录，只需要输入最终目标文件夹名称，就可以快速跳转，此为内置插件不用下</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim ~/.zshrc<br>plugins=(	git <br>			zsh-dircolors-solarized<br>			zsh-autosuggestions<br>			zsh-syntax-highlighting<br>			z<br>		)<br></code></pre></td></tr></table></figure>
-
-<h2 id="05-设置-alias"><a href="#05-设置-alias" class="headerlink" title="05. 设置 alias"></a>05. 设置 alias</h2><p>zsh 支持为较长命令设置一个别名，这样在使用时可以快捷输入。</p>
-<p>这里以 <code>cd ~/projects/learn/blog</code> 这个命令来举例：</p>
+<p>这会导致 Chrome 触发 <code>xdg-open kiwi://domcontentloaded</code>，然后 <code>xdg-open</code> 由于找不到处理程序而报错。</p>
+<p><strong>问题在于</strong>：</p>
 <ol>
-<li>在 <code>.zshrc</code> 中键入：</li>
+<li>Chrome <strong>不检查</strong> <code>kiwi://</code> 是否有处理程序，直接调用 <code>xdg-open</code>。</li>
+<li><code>xdg-open</code> 发现 <code>kiwi://</code> 不是标准 URL，也 <strong>没有找到相应的应用</strong>，就会报错。</li>
 </ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">alias cdblog=&quot;cd ~/projects/learn/blog&quot; <br></code></pre></td></tr></table></figure>
+<h2 id="04-强行解决问题"><a href="#04-强行解决问题" class="headerlink" title="04. 强行解决问题"></a>04. 强行解决问题</h2><p><code>sudo vim /usr/bin/xdg-open</code> 在 <code>xdg-open</code> 文件的最前面添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> =~ ^kiwi:// ]]; <span class="hljs-keyword">then</span><br>  <span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
 
-<p>\2. 开启新的 Shell 或 <code>source ~/.zshrc</code>，以使配置生效。生效后就可以使用 <code>cdblog</code> 进行跳转了。</p>
-<p>除了自己设置 alias 之外，一些插件也内置内很多 alias。最常用的是 git 插件内置的 alias。例如，<code>ga</code> 就代表 <code>git add</code>，更多 git 插件内置 alias 可以在 <code>git plugin alias</code> 中查看。</p>
+<p>这样它在执行任何逻辑之前就会检查 <code>kiwi://</code> 相关的 URL，从而告诉 <code>xdg-open</code>：</p>
+<ul>
+<li><strong>如果 URL 以 <code>kiwi://</code> 开头，直接退出，不执行任何操作。</strong></li>
+<li>这样，Chrome 即使调用 <code>xdg-open kiwi://domcontentloaded</code>，也不会触发弹窗。</li>
+</ul>
+<p>最终，<code>xdg-open</code> <strong>不会继续执行</strong> 默认的 URL 解析逻辑，错误弹窗也不会出现。</p>
+<blockquote>
+<p>在 <code>/usr/bin/xdg-open</code> 里添加拦截规则，可以避免不必要的错误。</p>
+<p>这个方法适用于 <strong>任何未知的、导致错误的协议</strong>，比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&gt;<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> =~ ^(kiwi|huya|wegame):// ]]; <span class="hljs-keyword">then</span><br> <span class="hljs-built_in">exit</span> 0<br>&gt;<span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure></blockquote>
+<h2 id="05-温和的解决方案"><a href="#05-温和的解决方案" class="headerlink" title="05. 温和的解决方案"></a>05. 温和的解决方案</h2><p><strong>在 Linux 上注册 <code>kiwi://</code> 处理程序（静默处理请求）</strong> 可以手动创建一个假的 <code>kiwi://</code> 处理器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;[Desktop Entry]</span><br><span class="hljs-string">Name=Ignore Kiwi</span><br><span class="hljs-string">Exec=/bin/true</span><br><span class="hljs-string">Type=Application</span><br><span class="hljs-string">NoDisplay=true</span><br><span class="hljs-string">MimeType=x-scheme-handler/kiwi;&quot;</span> &gt; ~/.local/share/applications/ignore-kiwi.desktop<br></code></pre></td></tr></table></figure>
+
+<p>然后注册它：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xdg-mime default ignore-kiwi.desktop x-scheme-handler/kiwi<br></code></pre></td></tr></table></figure>
+
+<p>这样 <code>xdg-open kiwi://xxx</code> 就不会弹窗了。</p>
 
                 
               </div>
@@ -380,7 +369,7 @@
       
         <a href="/tags/Arch/" class="print-no-link">#Arch</a>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/tags/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" class="print-no-link">#疑难杂症</a>
       
     </div>
   
@@ -392,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Arch Linux 命令行美化</div>
-      <div>https://wxwdaydayup.top/Arch Linux  konsole 美化/</div>
+      <div>linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法</div>
+      <div>https://wxwdaydayup.top/linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法/</div>
     </div>
     <div class="license-meta">
       
@@ -437,18 +426,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/linux%20%E7%B3%BB%E7%BB%9F%E6%89%93%E5%BC%80%E8%99%8E%E7%89%99%E7%9B%B4%E6%92%AD%E7%AD%89%E7%BD%91%E9%A1%B5%E5%87%BA%E7%8E%B0%20xdg-open%20%E5%BC%B9%E7%AA%97%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">linux 系统打开虎牙直播等网页出现 xdg-open 弹窗解决办法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Shell%20%E7%BC%96%E7%A8%8B%E8%BF%9B%E9%98%B6%EF%BC%88%E7%9F%A5%E5%85%B6%E6%89%80%E4%BB%A5%E7%84%B6%EF%BC%89/" title="Shell 编程进阶（知其所以然）">
-                        <span class="hidden-mobile">Shell 编程进阶（知其所以然）</span>
+                      <a href="/Arch%20Linux%20%20konsole%20%E7%BE%8E%E5%8C%96/" title="Arch Linux 命令行美化">
+                        <span class="hidden-mobile">Arch Linux 命令行美化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
