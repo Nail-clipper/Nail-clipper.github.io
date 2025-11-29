@@ -4,7 +4,7 @@
   <url>
     <loc>https://wxwdaydayup.top/%E9%A3%8E%E7%94%B5%E8%BF%90%E6%A3%80%E5%91%98%E5%80%BC%E7%8F%AD%E6%8C%87%E5%8D%97/</loc>
     
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -212,6 +212,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://wxwdaydayup.top/tags/Work/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -237,6 +244,13 @@
   
   <url>
     <loc>https://wxwdaydayup.top/categories/Shell/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wxwdaydayup.top/categories/Work/</loc>
     <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
